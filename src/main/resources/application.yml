@@ -6,3 +6,7 @@ spring.datasource.url: jdbc:h2:file:~/test
 spring.datasource.username: sa
 spring.datasource.password:
 spring.datasource.driver-class-name: org.h2.Driver
+
+listenbycode.api.key: hAqQ3DjcMwP10uDyJryUHdufTRnycakB
+listenbycode.api.url.upload: https://www.listenbycode.com/api/v1/upload
+listenbycode.api.url.download: https://www.listenbycode.com/api/v1/gettranscript
