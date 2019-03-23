@@ -1,19 +1,16 @@
 <template>
   <div class="wrapper-normal">
-    <div>
-      <input
-        type="file"
-        id="imageInput"
-        name="avatar"
-        accept="image/png, image/jpeg"
-        v-on:change="setCanvasImage()"
-      >
-      <img id="image" width="220" height="277" src="../common/image.jpg" alt="The Scream">
-    </div>
+    
+      <label>File to stash:</label>
+      <input type="file" name="file" required>
+      <button v-on:click="onSubmit()">Submit</button>
+
   </div>
 </template>
 
 <script>
+import { ImageRecognitionService } from "../common/api-service.js";
+
 export default {
   name: "directions",
   components: {},
@@ -26,26 +23,17 @@ export default {
     justDoSomething() {
       console.log("Witam eX");
     },
-    setCanvasImage() {
-     
-      if (canvas.getContext) {
-        const ctx = canvas.getContext("2d");
 
-        //Loading of the home test image - img1
-        var img1 = new Image();
-        img1.src = "../common/image.jpg";
-        //drawing of the test image - img1
-        img1.onload = function() {
-            console.log("szymonidas");
-          //draw background image
-          ctx.drawImage(img1, 0, 0);
-          //draw a box over the top
-          ctx.fillStyle = "rgba(200, 0, 0, 0.5)";
-          ctx.fillRect(0, 0, 500, 500);
-        };
+    onSubmit(callback) {
+      console.log("asdasdasdasd");
+      //get the input and the file
+      var input = document.querySelector("input[type=file]"),
+        file = input.files[0];
+      var fd = new FormData();
+      fd.append("file", file);
 
-        
-      }
+      console.log("aaaaaaa");
+      ImageRecognitionService.uploadPhoto(fd);
     }
   },
 

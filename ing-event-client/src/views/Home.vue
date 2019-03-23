@@ -61,6 +61,13 @@ export default {
       const input = document.querySelector('input[name=ticket-number]')
       // console.log(input.value);
       TicketService.login(input.value).then(this.proceedToEventPage);
+
+        this.$router.push({
+            name: 'talk',
+            params: {
+                talkId: '10'
+            }
+        })
     }
   },
   created() {

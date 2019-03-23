@@ -66,25 +66,22 @@ export const TicketService = {
 
 export const ImageRecognitionService = {
 
-    uploadPhoto() {
+    uploadPhoto(file) {
 
         const data = new FormData();
         data.append('file', file, "turbo_image.jpeg");
 
-        return (dispatch) => {
-            axios.post(URL, data, {
-                    headers: {
-                        'accept': 'application/json',
-                        'Accept-Language': 'en-US,en;q=0.8',
-                        'Content-Type': `multipart/form-data; boundary=${data._boundary}`,
-                    }
-                })
-                .then((response) => {
-                    //handle success
-                }).catch((error) => {
-                    //handle error
-                });
-        };
+        return axios.post(`face-recognition`, data, {
+                headers: {
+                    'accept': 'application/json',
+                    'Accept-Language': 'en-US,en;q=0.8',
+                    'Content-Type': `multipart/form-data; boundary=${data._boundary}`,
+                }
+            })
+            .then((response) => {
+                //handle success
+            }).catch((error) => {
+                //handle error
+            });
     }
-
 }
