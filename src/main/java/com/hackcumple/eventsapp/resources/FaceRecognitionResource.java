@@ -4,9 +4,11 @@ import com.hackcumple.eventsapp.services.FaceRecognitionService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 
@@ -18,10 +20,10 @@ public class FaceRecognitionResource {
 
     private final FaceRecognitionService faceRecognitionService;
 
-    @GetMapping
-    public ResponseEntity getFacesAmount() {
+    @PostMapping
+    public ResponseEntity handleFileUpload(@RequestParam("file") MultipartFile file) {
         try {
-            return ResponseEntity.ok(this.faceRecognitionService.getFacesAmount());
+            return ResponseEntity.ok(this.faceRecognitionService.getFacesAmount(file.getBytes()));
         } catch (IOException e) {
             return ResponseEntity.noContent().build();
         }
