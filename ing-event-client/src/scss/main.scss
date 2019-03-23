@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Buenard');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Signika');
 
 * {
   box-sizing: border-box;
@@ -56,7 +58,7 @@ button {
   // cursor: pointer;
 }
 
-.wrapper {
+.wrapper-of-centered-cnt {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,4 +73,44 @@ button {
       margin-top: 0;
     }
   }
+}
+
+.wrapper-normal {
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.4rem;
+    background: #f60;
+    color: #fff;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    padding: 0.5rem 0.4rem;
+    color: #fff;
+
+    &.where {
+      background: rgb(180, 72, 0);
+    }
+
+    &.when {
+      background: rgb(89, 3, 146);
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0.5rem 0.4rem;
+  }
+
+  .event-img-cnt {
+    background-image: url(assets/event_img1.png);
+    background-size: cover;
+    min-height: 20vh;
+  }
+
+  // .content-cnt {
+
+  // }
 }

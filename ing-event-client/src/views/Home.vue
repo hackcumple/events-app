@@ -2,7 +2,7 @@
   <div class="home" v-if="isLoading">
     <Loader/>
   </div>
-  <div class="home" v-else>
+  <div class="home darkbg" v-else>
     <div class="logo">
       <h1>
         ING
@@ -10,7 +10,7 @@
       </h1>
     </div>
 
-    <div class="wrapper">
+    <div class="wrapper-of-centered-cnt">
       <div class="centered-cnt">
         <h2>Wpisz nr biletu:</h2>
         <h3>(lub zeskanuj kod)</h3>
