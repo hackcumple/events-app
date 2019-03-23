@@ -1,14 +1,11 @@
 import Vue from "vue";
 import axios from "axios";
 import VueAxios from "vue-axios";
-import {
-    API_URL
-} from "@/common/config";
 
 const ApiService = {
     init() {
         Vue.use(VueAxios, axios);
-        Vue.axios.defaults.baseURL = API_URL;
+        Vue.axios.defaults.baseURL = "localhost:8080";
     },
 
     query(resource, params) {
@@ -57,12 +54,19 @@ export const LOLService = {
 };
 
 export const LoginService = {
-    loginUser(login, passwd) {
+    login(login, passwd) {
         return ApiService.post("login", {
             login: login,
             password: passwd
         });
     }
+
+    // logout(login, passwd) {
+    //     return ApiService.post("login", {
+    //         login: login,
+    //         password: passwd
+    //     });
+    // }
 };
 
 export const TalkService = {
@@ -80,12 +84,14 @@ export const TalkService = {
         //setInterval bla bla bla
         return ApiService.get("questionsList", talkId);
     }
-
-
 };
+
+//TO DZIALA ALE CORS!
 
 export const TestApi = {
     testAPI() {
-        return ApiService.get("");
+        return axios.get("localhost:8080/api/test").catch(error => {
+            throw new Error(`[RWV] ApiService ${error}`);
+        });
     }
 };
