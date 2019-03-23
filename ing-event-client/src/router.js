@@ -7,7 +7,7 @@ import EventSummary from './views/EventSummary.vue'
 import Login from './views/Login.vue'
 import Talk from './views/Talk.vue'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [{
@@ -47,7 +47,11 @@ export default new Router({
     {
       path: '/talk',
       name: 'talk',
-      component: Talk
-    },
+      component: Talk,
+        props: (route) => ({
+        talkId: 'dupa',
+        ...route.params
+        })
+    }
   ]
 });
