@@ -46,7 +46,6 @@ export default {
   },
   methods: {
     justDoSomething() {
-      
       console.log("Witam eX");
     },
 

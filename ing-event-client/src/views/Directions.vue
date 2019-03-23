@@ -5,13 +5,12 @@
   <div class="home" v-else>
     <Menubar/>
     <div class="wrapper-normal">
-      <div class="event-img-cnt"></div>
-      <h1>xD </h1>
+      <h1>Wydarzonko name</h1>
       <h2 class="where">Katowice, Galeria Rondo Sztuki, Rondo im. Jerzego Ziętka 2</h2>
-      <h2 class="when">sobota, 23 marca 2019</h2>
-      <p>
-        Zapraszamy na zajebiste wydarzenie, wśród prelegentów Harry Potter i profesor McGonagall.
-      </p>
+      <div class="img-cnt">
+        <img src="../assets/map.png">
+      </div>
+      
     </div>
   </div>
 </template>
