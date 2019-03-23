@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static java.util.Map.Entry.comparingByValue;
+import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;
 
 @Service
@@ -33,10 +33,11 @@ public class PresentationService {
             } else if (presentationsByTags.isEmpty()) {
                 presentationsByTags = presentations;
             }
-            Map<String, Double> theBestSpeaker = getTheBestSpeaker();
-            for (Presentation presentationsByTag : presentationsByTags) {
-                if (theBestSpeaker.get(presentationsByTag.getSpeaker()) != null) {
-                    favourite.add(presentationsByTag);
+            List<String> theBestSpeakers = getTheBestSpeakers();
+            for (String theBestSpeaker : theBestSpeakers) {
+                Optional<Presentation> first = presentationsByTags.stream().filter(presentation -> presentation.getSpeaker().equals(theBestSpeaker)).findFirst();
+                if (first.isPresent()) {
+                    favourite.add(first.get());
                     break;
                 }
             }
@@ -44,7 +45,7 @@ public class PresentationService {
         return favourite;
     }
 
-    public Map<String, Double> getTheBestSpeaker() {
+    public List<String> getTheBestSpeakers() {
         Iterable<Presentation> presentations = presentationRepository.findAll();
         List<SpeakerRate> speakerRates = new ArrayList<>();
         for (Presentation presentation : presentations) {
@@ -61,8 +62,7 @@ public class PresentationService {
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                .collect(
-                        toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2,
-                                LinkedHashMap::new));
+                .map(Map.Entry::getKey)
+                .collect(toList());
     }
 }
