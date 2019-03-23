@@ -133,12 +133,20 @@ button {
     }
   }
 
-  .rank {
-    display: flex;
-    padding-top: 1vh;
-    padding-bottom: 2vh;
-    .checked {
-      color: #f60;
+  .rank-wrapper{
+    background-color: #ffc59e;
+    padding-bottom: 80px;
+    .rank {
+      display: flex;
+      padding: 0rem 0rem 1rem 1rem;
+      .checked {
+        color: #f60;
+      }
+    }
+
+    button {
+      -webkit-box-shadow: none;
+      box-shadow: none;
     }
   }
 

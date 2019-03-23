@@ -15,17 +15,23 @@
       <div class="questions">
         <h2>Zadawaj i podbijaj pytania do prelegenta: </h2>
         <ul>
-          <li v-for="question in topQuestions">
-              <p>{{ question.value }}</p>
+          <li v-for="(question, index) in sortedQuestions">
+              <p>{{index+1}}. {{ question.value }}</p>
               <div style="float: right">
                   <p>votes: {{question.votes}}</p>
                   <font-awesome-icon icon="thumbs-up" size="lg" v-on:click="voteUp(question)"/><br/>
               </div>
           </li>
         </ul>
+
+        <div>
+          <div style="display: grid;">
+            <button>Zadaj pytanie</button>
+          </div>
+        </div>
       </div>
-      <div>
-      Oceń wykład:
+      <div class="rank-wrapper">
+        <h2 style="color: black;">Oceń wykład:</h2>
         <div class="rank">
           <font-awesome-icon icon="star" size="lg" class="checked"/><br />
           <font-awesome-icon icon="star" size="lg" class="checked"/><br />
@@ -34,7 +40,12 @@
           <font-awesome-icon icon="star" size="lg"/><br />
         </div>
         <div class="comments">
-          <textarea></textarea>
+          <textarea placeholder="Napisz komentarz..."></textarea>
+        </div>
+        <div>
+          <div style="display: grid;">
+            <button>Dodaj komentarz</button>
+          </div>
         </div>
       </div>
     </div>
@@ -56,11 +67,11 @@
         isLoading: true,
 
         topQuestions: [
-          {value: "pytanie numer 1?", votes: 5},
-          {value: "pytanie numer 1?", votes: 5},
-          {value: "pytanie numer 1?", votes: 5},
-          {value: "pytanie numer 1?", votes: 5},
-          {value: "pytanie numer 1?", votes: 5}
+          {value: "java czy javascript?", votes: 5},
+          {value: "kotlin czy scala?", votes: 4},
+          {value: "co to java?", votes: 3},
+          {value: "co to kod?", votes: 2},
+          {value: "aaaaaaaaaa?", votes: 1}
         ]
       };
     },
@@ -69,9 +80,17 @@
         console.log("Witam eX");
       },
 
-        voteUp(question) {
-          question.votes +=1;
-        }
+
+      voteUp(question) {
+        question.votes +=1;
+      }
+    },
+    computed: {
+      sortedQuestions: function() {
+        return this.topQuestions.sort(function(x, y) {
+          return y.votes- x.votes;
+        });
+      }
     },
     created() {},
     mounted() {
