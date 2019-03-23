@@ -14,7 +14,7 @@
       <div class="centered-cnt">
         <h2>Wpisz nr biletu:</h2>
         <h3>(lub zeskanuj kod)</h3>
-        <form>
+        <form v-on:submit.prevent="onSubmit">
           <input type="text" name="ticket-number" placeholder="np. ING-hack323KJHS">
           <button type="submit">zaloguj</button>
         </form>
@@ -31,7 +31,7 @@ import HelloWorld from "@/components/HelloWorld.vue";
 import Loader from "@/components/Loader.vue";
 import { setTimeout } from "timers";
 import { TestApi } from "../common/api-service.js";
-import { LoginService } from "../common/api-service.js";
+import { TicketService } from "../common/api-service.js";
 
 export default {
   name: "home",
@@ -48,11 +48,18 @@ export default {
     justDoSomething() {
       
       console.log("Witam eX");
+    },
+
+    onSubmit(e) {
+      console.log("ev", e);
+      const input = document.querySelector('input[name=ticket-number]')
+      // console.log(input.value);
+      TicketService.login(input.value);
     }
   },
   created() {
     console.log("SZYNOM");
-    TestApi.testAPI2();
+    // TestApi.testAPI2();
   },
   mounted() {
     this.isLoading = false;
