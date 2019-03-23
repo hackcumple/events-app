@@ -1045,3 +1045,20 @@ insert into Presentation (id, eventid, name, tag, description, rate, speaker, st
 insert into Presentation (id, eventid, name, tag, description, rate, speaker, startHour) values (100043, 6, 'Project Almanac', 'MICROSERVICES', 'nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla', 1.66, 'Dominik Kownacki', 15);
 insert into Presentation (id, eventid, name, tag, description, rate, speaker, startHour) values (100044, 6, 'Third Part of the Night, The (Trzecia czesc nocy)', 'PYTHON', 'integer ac neque duis bibendum morbi non quam nec dui luctus', 4.35, 'Rafal Jankowski', 16);
 insert into Presentation (id, eventid, name, tag, description, rate, speaker, startHour) values (100045, 6, 'S.O.S. Coast Guard', 'BIGDATA', 'mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque', 1.48, 'Rafal Jankowski', 17);
+
+
+
+-- TICKET
+insert into TICKET (id, EVENTID) values (1, 1);
+insert into TICKET (id, EVENTID) values (2, 2);
+insert into TICKET (id, EVENTID) values (3, 3);
+insert into TICKET (id, EVENTID) values (4, 4);
+insert into TICKET (id, EVENTID) values (5, 5);
+
+-- EVENT
+insert into EVENT (id, name, description, date, city, streetName, streetNumber) values (1, 'Isuzu', 'eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium', '2018-04-11 12:02:14', 'Chenfangji', 'Village Green', '65');
+insert into EVENT (id, name, description, date, city, streetName, streetNumber) values (2, 'Saturn', 'cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras', '2018-08-04 22:18:55', 'Huacrachuco', 'Helena', '6');
+insert into EVENT (id, name, description, date, city, streetName, streetNumber) values (3, 'Ford', 'sed interdum venenatis turpis enim blandit mi in porttitor pede', '2018-08-23 04:39:10', 'Jatiwangi', 'Thompson', '879');
+insert into EVENT (id, name, description, date, city, streetName, streetNumber) values (4, 'Honda', 'ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis', '2019-03-04 10:11:11', 'Liufu', 'Columbus', '9');
+insert into EVENT (id, name, description, date, city, streetName, streetNumber) values (5, 'Dodge', 'vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque', '2018-12-18 21:04:47', 'Potou', 'Ilene', '85');
+insert into EVENT (id, name, description, date, city, streetName, streetNumber) values (6, 'Audi', 'ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac', '2019-01-28 10:03:27', 'Guluoshan', 'Londonderry', '45');
