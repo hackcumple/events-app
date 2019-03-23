@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/test")
 public class TestResource {
 
-    @CrossOrigin(origins = "http://localhost:8081")
+    //@CrossOrigin(origins = "http://localhost:8081")
     @GetMapping
     public ResponseEntity testMethod() {
         return ResponseEntity.ok().body("Witaj Szynom");

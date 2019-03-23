@@ -1,4 +1,5 @@
 import axios from "axios";
+import FormData from 'form-data'
 
 const ApiService = {
 
@@ -17,23 +18,12 @@ const ApiService = {
 export default ApiService;
 
 // class Test(){
-    
+
 //     getSth = async() =>{
 //         await ApiService.get("lolz");
 //     }
 //}
 
-export const TestApi = {
-    testAPI() {
-        return axios.get("http://localhost:8080/api/test").catch(error => {
-            throw new Error(`[RWV] ApiService ${error}`);
-        });
-    },
-
-    testAPI2() {
-        return ApiService.get("test");
-    }
-};
 
 export const TalkService = {
     sendTalkRate(rate, talkId) {
@@ -45,17 +35,22 @@ export const TalkService = {
 
     sendQuestion(question, talkId) {
         return ApiService.post(`/presentation/${talkId}/question`, {
-            value:question
+            value: question
         });
     },
 
-    getQuestionsList(talkId){
+    getQuestionsList(talkId) {
         return ApiService.get(`presentation/${talkId}/question`)
     },
 
     subscribeForQuestions(talkId) {
         //setInterval bla bla bla
         return ApiService.get("questionsList", talkId);
+    },
+
+    //convert TAGS to capital letters ?
+    getFavouriteTrack(talkId, tags) {
+        return ApiService.get(`favouriteTrack/${talkId}/${tags}`);
     }
 
 };
@@ -64,14 +59,32 @@ export const TicketService = {
     //this function returns basic info about event ;)
     login(ticketId) {
         return ApiService.get(`login/${ticketId}`, {
-            value:ticketId
+            value: ticketId
         });
     }
-
-    // logout(login, passwd) {
-    //     return ApiService.post("login", {
-    //         login: login,
-    //         password: passwd
-    //     });
-    // }
 };
+
+// export const ImageRecognitionService = {
+
+//     uploadPhoto() {
+
+//         let data = new FormData();
+//         data.append('file', file, file.fileName);
+
+//         return (dispatch) => {
+//             axios.post(URL, data, {
+//                     headers: {
+//                         'accept': 'application/json',
+//                         'Accept-Language': 'en-US,en;q=0.8',
+//                         'Content-Type': `multipart/form-data; boundary=${data._boundary}`,
+//                     }
+//                 })
+//                 .then((response) => {
+//                     //handle success
+//                 }).catch((error) => {
+//                     //handle error
+//                 });
+//         };
+//     }
+
+//}
