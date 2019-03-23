@@ -5,6 +5,8 @@ import com.hackcumple.eventsapp.data.WordDetails;
 import com.hackcumple.eventsapp.data.transcriptionDTO.ListenApiResponse;
 import com.hackcumple.eventsapp.data.transcriptionDTO.TranscriptionResult;
 import com.hackcumple.eventsapp.data.transcriptionDTO.Word;
+import com.hackcumple.eventsapp.repository.TranscriptionRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -22,6 +24,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class SpeechService {
 
     @Value("${listenbycode.api.key}")
@@ -33,7 +36,9 @@ public class SpeechService {
     @Value("${listenbycode.api.url.download}")
     private String downloadUrl;
 
-    public String uploadAudio(MultipartFile file) {
+    private final TranscriptionRepository transcriptionRepository;
+
+    public String uploadAudio(MultipartFile file,Long presentationId) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.MULTIPART_FORM_DATA);
 
@@ -48,33 +53,41 @@ public class SpeechService {
         ResponseEntity response = restTemplate.postForEntity(uploadUrl, request, Map.class);
 
         Map body = (Map) response.getBody();
+        String orderId = ((Map)body.get("result")).get("orderId").toString();
 
-        return ((Map)body.get("result")).get("orderId").toString();
+        Transcription transcription = new Transcription();
+        transcription.setOrderId(orderId);
+        transcription.setPresentationId(presentationId);
+        transcriptionRepository.save(transcription);
+
+        return orderId;
     }
 
-    public Transcription GetTranscriptionDetails(String idOrder) {
-        TranscriptionResult transcriptionResult = GetTranscription(idOrder);
+    public Transcription GetTranscriptionDetails(Long presentationId) {
+
+        Transcription transcription = transcriptionRepository.findByPresentationId(presentationId).get();
+        TranscriptionResult transcriptionResult = GetTranscription(transcription.getOrderId());
 
         Map<String, List<Word>> words =
                 transcriptionResult.getWord().stream().collect(Collectors.groupingBy(Word::getWord));
 
-        Transcription transcription = new Transcription();
-        transcription.setOrderId(idOrder);
+        transcription.setOrderId(transcription.getOrderId());
         transcription.setSpeakerName("testName");
         transcription.setText(transcriptionResult.getText());
         transcription.setWordDetails(words.entrySet()
-                .stream().map(e -> WordDetails.builder().word(e.getKey()).count(e.getValue().size()).build()).collect(Collectors.toList()));
-
+                .stream().map(e -> WordDetails.builder().word(e.getKey()).count(e.getValue().size()).transcription(transcription).build()).collect(Collectors.toList()));
         transcription.setWordDetails(transcription.getWordDetails().stream().filter(e->e.getCount() >= 2).collect(Collectors.toList()));
 
+        transcriptionRepository.save(transcription);
         return transcription;
     }
 
-    private TranscriptionResult GetTranscription(String idOrder){
+    private TranscriptionResult GetTranscription(String orderId){
+
         HttpHeaders headers = new HttpHeaders();
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(downloadUrl)
                 .queryParam("appkey", apiKey)
-                .queryParam("orderid", idOrder);
+                .queryParam("orderid", orderId);
 
         HttpEntity<?> entity = new HttpEntity<>(headers);
 

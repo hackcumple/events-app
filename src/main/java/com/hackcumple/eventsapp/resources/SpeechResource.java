@@ -14,13 +14,13 @@ public class SpeechResource {
 
     private final SpeechService speechService;
 
-    @GetMapping(path = "getTranscriptionDetails/{orderId}")
-    public ResponseEntity getTranscriptionDetails(@PathVariable("orderId")String orderId) {
-        return new ResponseEntity<>(speechService.GetTranscriptionDetails(orderId), HttpStatus.OK);
+    @GetMapping(path = "getTranscriptionDetails/{presentationId}")
+    public ResponseEntity getTranscriptionDetails(@PathVariable("presentationId")Long presentationId) {
+        return new ResponseEntity<>(speechService.GetTranscriptionDetails(presentationId), HttpStatus.OK);
     }
 
-    @PostMapping("/upload")
-    public ResponseEntity uploadAudio(@RequestParam("file") MultipartFile file) {
-        return ResponseEntity.ok(this.speechService.uploadAudio(file));
+    @PostMapping("/upload/{presentationId}")
+    public ResponseEntity uploadAudio(@RequestParam("file") MultipartFile file,@PathVariable Long presentationId) {
+        return ResponseEntity.ok(this.speechService.uploadAudio(file,presentationId));
     }
 }

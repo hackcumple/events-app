@@ -17,11 +17,17 @@ public class Transcription {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
+    @Column(name = "PRESENTATIONID")
+    Long presentationId;
+
     @Column(name = "SPEAKERNAME")
     String speakerName;
+
     @Column(name = "ORDERID")
     String orderId;
+
     String text;
+
     @Column(name = "WORDDETAILS")
     @OneToMany(mappedBy = "transcription", cascade = CascadeType.ALL)
     List<WordDetails> wordDetails;
