@@ -18,6 +18,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.Comparator;
 import java.util.List;
 import java.io.File;
 import java.util.Map;
@@ -76,7 +77,8 @@ public class SpeechService {
         transcription.setText(transcriptionResult.getText());
         transcription.setWordDetails(words.entrySet()
                 .stream().map(e -> WordDetails.builder().word(e.getKey()).count(e.getValue().size()).transcription(transcription).build()).collect(Collectors.toList()));
-        transcription.setWordDetails(transcription.getWordDetails().stream().filter(e->e.getCount() >= 2).collect(Collectors.toList()));
+        transcription.setWordDetails(transcription.getWordDetails()
+                .stream().filter(e->e.getCount() >= 2).sorted(Comparator.comparing(WordDetails::getCount).reversed()).collect(Collectors.toList()));
 
         transcriptionRepository.save(transcription);
         return transcription;
