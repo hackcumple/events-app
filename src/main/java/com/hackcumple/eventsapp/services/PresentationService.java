@@ -20,45 +20,55 @@ public class PresentationService {
 
     public List<Presentation> getFavoriteTrack(Long eventId, String tagsText) {
         List<String> tags = Arrays.asList(tagsText.split("\\s*,\\s*"));
-        List<Presentation> favourite = new ArrayList<>();
-        for (Long startHour = 9L; startHour < 18; startHour++) {
-            List<Presentation> presentations = presentationRepository.findPresentationsByEventIdAndStartHour(eventId, startHour);
+        List<Presentation> favoritePresentations = new ArrayList<>();
+        for (long startHour = 9L; startHour < 18; startHour++) {
+            List<Presentation> presentationsByEventIdAndStartHour = presentationRepository
+                    .findPresentationsByEventIdAndStartHour(eventId, startHour);
 
-            List<Presentation> presentationsByTags = presentations.stream()
-                    .filter(presentation -> tags.contains(presentation.getTag())).collect(Collectors.toList());
+            List<Presentation> presentationsByTags = presentationsByEventIdAndStartHour
+                    .stream()
+                    .filter(presentation -> tags.contains(presentation.getTag()))
+                    .collect(Collectors.toList());
 
             if (presentationsByTags.size() == 1) {
-                favourite.add(presentationsByTags.get(0));
+                favoritePresentations.add(presentationsByTags.get(0));
                 continue;
             } else if (presentationsByTags.isEmpty()) {
-                presentationsByTags = presentations;
+                presentationsByTags = presentationsByEventIdAndStartHour;
             }
             List<String> theBestSpeakers = getTheBestSpeakers();
             for (String theBestSpeaker : theBestSpeakers) {
-                Optional<Presentation> first = presentationsByTags.stream().filter(presentation -> presentation.getSpeaker().equals(theBestSpeaker)).findFirst();
-                if (first.isPresent()) {
-                    favourite.add(first.get());
+                Optional<Presentation> presentationWithTheBestSpeaker = presentationsByTags
+                        .stream()
+                        .filter(presentation -> presentation.getSpeaker().equals(theBestSpeaker))
+                        .findFirst();
+
+                if (presentationWithTheBestSpeaker.isPresent()) {
+                    favoritePresentations.add(presentationWithTheBestSpeaker.get());
                     break;
                 }
             }
         }
-        return favourite;
+        return favoritePresentations;
     }
 
-    public List<String> getTheBestSpeakers() {
+    private List<String> getTheBestSpeakers() {
         Iterable<Presentation> presentations = presentationRepository.findAll();
         List<SpeakerRate> speakerRates = new ArrayList<>();
         for (Presentation presentation : presentations) {
-            Optional<SpeakerRate> first = speakerRates.stream().filter(speakerRate -> speakerRate.equals(presentation.getSpeaker())).findFirst();
-            if (first.isPresent()) {
-                first.get().incrementAmountRates();
+            Optional<SpeakerRate> speakerRate = speakerRates.stream()
+                    .filter(speaker -> speaker.equals(presentation.getSpeaker()))
+                    .findFirst();
+
+            if (speakerRate.isPresent()) {
+                speakerRate.get().incrementAmountRates();
             } else {
                 speakerRates.add(new SpeakerRate(presentation.getSpeaker(), presentation.getRate()));
             }
         }
         return speakerRates.stream().collect(
-                toMap(SpeakerRate::getSpeaker, o -> o.getRates().stream().mapToDouble(Double::doubleValue).sum() / o.getAmountRates(), (e1, e2) -> e2,
-                        LinkedHashMap::new))
+                toMap(SpeakerRate::getSpeaker, speakerRate -> speakerRate.getRates().stream().mapToDouble(Double::doubleValue).sum() / speakerRate.getAmountRates(),
+                        (e1, e2) -> e2, LinkedHashMap::new))
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
