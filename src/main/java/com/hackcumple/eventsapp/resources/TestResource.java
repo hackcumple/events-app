@@ -11,6 +11,6 @@ public class TestResource {
 
     @GetMapping
     public ResponseEntity testMethod() {
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body("dupa dupa");
     }
 }
