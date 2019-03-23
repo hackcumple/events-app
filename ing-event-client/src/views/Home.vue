@@ -52,7 +52,7 @@ export default {
   },
   created() {
     console.log("SZYNOM");
-    TestApi.testAPI();
+    TestApi.testAPI2();
   },
   mounted() {
     this.isLoading = false;
