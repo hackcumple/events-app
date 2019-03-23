@@ -63,4 +63,9 @@ public class PresentationResource {
         questionRepository.save(question);
         return ResponseEntity.ok(question);
     }
+
+    @GetMapping(path = "tracks/{eventId}")
+    public ResponseEntity getTracks(@PathVariable("eventId") Long eventId) {
+        return new ResponseEntity<>(presentationService.getTracks(eventId), HttpStatus.OK);
+    }
 }

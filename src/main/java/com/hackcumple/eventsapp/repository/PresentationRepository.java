@@ -9,4 +9,6 @@ import java.util.List;
 public interface PresentationRepository extends CrudRepository<Presentation, Long> {
 
         List<Presentation> findPresentationsByEventIdAndStartHour(Long eventId, Long startHour);
+
+        List<Presentation> findPresentationByEventId(Long eventId);
 }
