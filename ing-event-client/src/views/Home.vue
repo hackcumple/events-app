@@ -29,7 +29,9 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import Loader from "@/components/Loader.vue";
-import { setTimeout } from 'timers';
+import { setTimeout } from "timers";
+import { TestApi } from "../common/api-service.js";
+import { LoginService } from "../common/api-service.js";
 
 export default {
   name: "home",
@@ -40,21 +42,20 @@ export default {
   data() {
     return {
       isLoading: true
-    }
+    };
   },
   methods: {
     justDoSomething() {
+      
       console.log("Witam eX");
     }
   },
   created() {
-
+    console.log("SZYNOM");
+    TestApi.testAPI2();
   },
   mounted() {
-    this.isLoading = false
+    this.isLoading = false;
   }
 };
-
-
-
 </script>
