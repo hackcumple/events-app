@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Buenard');
+
+* {
+  box-sizing: border-box;
+}
+html, body {
+  font-family: Buenard, serif;
+  position: relative;
+}
+
+.logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  h1 {
+    margin: 0;
+    padding: 5px;
+    color: #ffc59e;
+    span {
+      color: #fff;
+    }
+  }
+}
+
+.darkbg {
+  background-image: linear-gradient(-30deg, #f9a719, #f60);
+  color: #fff;
+}
+
+.lightbg {
+  background: #fff;
+  color: #ff6600;
+}
+
+input {
+  border: 2px solid white;
+  padding: 10px;
+  background: transparent;
+  color: #fff;
+  font-family: monospace;
+  display: block;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+button {
+  background: #fff;
+  border: 0;
+  color: #ff6600;
+  font-weight: bold;
+  padding: 0.7rem 1.5rem;
+  margin: 10px 0 10px;
+  float: right;
+  box-shadow: 5px 5px;
+  // cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  .centered-cnt {
+    text-align: center;
+    width: 80%;
+
+    h1, h2 {
+      margin-top: 0;
+    }
+  }
+}

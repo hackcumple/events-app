@@ -20,4 +20,9 @@ public class SpeechResource {
         return ResponseEntity.ok().body(speechService.uploadAudio(fileName));
     }
 
+    @GetMapping(path = "getTranscriptionDetails/{orderId}")
+    public ResponseEntity getTranscriptionDetails(@PathVariable("orderId")String orderId) {
+        speechService.GetTranscriptionDetails(orderId);
+        return ResponseEntity.ok().build();
+    }
 }
