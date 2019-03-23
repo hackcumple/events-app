@@ -2,6 +2,7 @@ package com.hackcumple.eventsapp.resources;
 
 import com.hackcumple.eventsapp.services.SpeechService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,9 +15,8 @@ public class SpeechResource {
     private final SpeechService speechService;
 
     @GetMapping(path = "getTranscriptionDetails/{orderId}")
-    public ResponseEntity getTranscriptionDetails(@PathVariable("orderId") String orderId) {
-        speechService.GetTranscriptionDetails(orderId);
-        return ResponseEntity.ok().build();
+    public ResponseEntity getTranscriptionDetails(@PathVariable("orderId")String orderId) {
+        return new ResponseEntity<>(speechService.GetTranscriptionDetails(orderId), HttpStatus.OK);
     }
 
     @PostMapping("/upload")

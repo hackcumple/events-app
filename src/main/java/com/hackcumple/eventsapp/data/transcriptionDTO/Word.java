@@ -1,4 +1,4 @@
-package com.hackcumple.eventsapp.data.Transcription;
+package com.hackcumple.eventsapp.data.transcriptionDTO;
 
 import lombok.Getter;
 import lombok.Setter;
