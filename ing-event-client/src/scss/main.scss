@@ -151,8 +151,21 @@ button {
 
   .questions {
     background-color: #ff6600;
+    padding-bottom: 3vh;
     ul {
       list-style-type: none;
+      padding-right: 2rem;
+      padding-left: 2rem;
+
+      li {
+        border: solid 1px rgb(89, 3, 146);
+        margin: 0 0 1vh 0;
+        padding: 0 1vh 0 0;
+
+        p{
+          display: inline-flex;
+        }
+      }
     }
   }
 }

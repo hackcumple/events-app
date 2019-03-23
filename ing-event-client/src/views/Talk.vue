@@ -16,7 +16,11 @@
         <h2>Zadawaj i podbijaj pytania do prelegenta: </h2>
         <ul>
           <li v-for="question in topQuestions">
-            {{ question.value }} votes: {{question.votes}}
+              <p>{{ question.value }}</p>
+              <div style="float: right">
+                  <p>votes: {{question.votes}}</p>
+                  <font-awesome-icon icon="thumbs-up" size="lg" v-on:click="voteUp(question)"/><br/>
+              </div>
           </li>
         </ul>
       </div>
@@ -55,6 +59,7 @@
           {value: "pytanie numer 1?", votes: 5},
           {value: "pytanie numer 1?", votes: 5},
           {value: "pytanie numer 1?", votes: 5},
+          {value: "pytanie numer 1?", votes: 5},
           {value: "pytanie numer 1?", votes: 5}
         ]
       };
@@ -62,7 +67,11 @@
     methods: {
       justDoSomething() {
         console.log("Witam eX");
-      }
+      },
+
+        voteUp(question) {
+          question.votes +=1;
+        }
     },
     created() {},
     mounted() {
