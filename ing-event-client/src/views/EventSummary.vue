@@ -6,11 +6,11 @@
     <Menubar/>
     <div class="wrapper-normal">
       <div class="event-img-cnt"></div>
-      <h1>Jakiś meetup ING tech ssssdfdsf </h1>
-      <h2 class="where">Katowice, Galeria Rondo Sztuki, Rondo im. Jerzego Ziętka 2</h2>
-      <h2 class="when">sobota, 23 marca 2019</h2>
+      <h1>{{ name }}</h1>
+      <h2 class="where">{{ city }}, {{ streetName }} {{ streetNumber }} </h2>
+      <h2 class="when">{{ date }}</h2>
       <p>
-        Zapraszamy na zajebiste wydarzenie, wśród prelegentów Harry Potter i profesor McGonagall.
+        {{description}}
       </p>
     </div>
   </div>
@@ -22,6 +22,7 @@ import Menubar from "@/components/Menubar.vue";
 
 export default {
   name: "event_summary",
+  props: ['city', 'date', 'description', 'id', 'name', 'streetName', 'streetNumber'],
   components: {
     Loader,
     Menubar
@@ -36,7 +37,9 @@ export default {
       console.log("Witam eX");
     }
   },
-  created() {},
+  created() {
+    console.log("SZYNOM3", this.city);
+  },
   mounted() {
     this.isLoading = false;
   }

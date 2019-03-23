@@ -5,7 +5,7 @@
       <span>Wydarzenie</span>
     </router-link>
     <router-link to="/directions">
-      <font-awesome-icon icon="map" size="lg" /><br />
+      <font-awesome-icon icon="coffee" size="lg" /><br />
       <span>Miejsce</span>
     </router-link>
     <router-link to="/agenda">

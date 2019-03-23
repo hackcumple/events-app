@@ -50,11 +50,18 @@ export default {
       console.log("Witam eX");
     },
 
+    proceedToEventPage(eventData) {
+      this.$router.push({
+          name: 'event-summary',
+          params: eventData.data
+        })
+    },
+
     onSubmit(e) {
       console.log("ev", e);
       const input = document.querySelector('input[name=ticket-number]')
       // console.log(input.value);
-      TicketService.login(input.value);
+      TicketService.login(input.value).then(this.proceedToEventPage);
     }
   },
   created() {

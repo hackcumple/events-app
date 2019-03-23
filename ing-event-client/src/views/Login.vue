@@ -1,24 +1,6 @@
 <template>
   <div class="root">
-    <div class="logo">
-      <h1>
-        ING
-        <span>event</span>
-      </h1>
-    </div>
 
-    <div class="wrapper">
-      <div class="centered-cnt">
-        <h2>Wpisz nr biletu:</h2>
-        <h3>(lub zeskanuj kod)</h3>
-        <form>
-          <input type="text" name="ticket-number" placeholder="np. ING-hack323KJHS">
-          <button type="submit">zaloguj</button>
-        </form>
-
-
-      </div>
-    </div>
 
     <!-- <h1>INGevent</h1>
     <h2>header number 2</h2>
