@@ -16,6 +16,13 @@ const ApiService = {
 
 export default ApiService;
 
+// class Test(){
+    
+//     getSth = async() =>{
+//         await ApiService.get("lolz");
+//     }
+//}
+
 export const TestApi = {
     testAPI() {
         return axios.get("http://localhost:8080/api/test").catch(error => {
@@ -56,7 +63,7 @@ export const TalkService = {
 export const TicketService = {
     //this function returns basic info about event ;)
     login(ticketId) {
-        return ApiService.post("", {
+        return ApiService.post(`login/${ticketId}`, {
             value:ticketId
         });
     }
