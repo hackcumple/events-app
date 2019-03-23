@@ -36,7 +36,8 @@ export default new Router({
     {
       path: '/event-summary',
       name: 'event-summary',
-      component: EventSummary
+      component: EventSummary,
+      props: true
     },
     {
       path: '/login',
