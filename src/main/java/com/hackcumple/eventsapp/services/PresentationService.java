@@ -75,4 +75,8 @@ public class PresentationService {
                 .map(Map.Entry::getKey)
                 .collect(toList());
     }
+
+    public Presentation getPresentation(Long id){
+        return presentationRepository.findById(id).get();
+    }
 }

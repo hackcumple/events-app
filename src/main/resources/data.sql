@@ -1062,3 +1062,37 @@ insert into EVENT (id, name, description, date, city, streetName, streetNumber) 
 insert into EVENT (id, name, description, date, city, streetName, streetNumber) values (4, 'Honda', 'ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis', '2019-03-04 10:11:11', 'Liufu', 'Columbus', '9');
 insert into EVENT (id, name, description, date, city, streetName, streetNumber) values (5, 'Dodge', 'vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque', '2018-12-18 21:04:47', 'Potou', 'Ilene', '85');
 insert into EVENT (id, name, description, date, city, streetName, streetNumber) values (6, 'Audi', 'ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac', '2019-01-28 10:03:27', 'Guluoshan', 'Londonderry', '45');
+
+-- LOST THING
+insert into LOSTTHING (id, name, description) values (1, 'Whiskey Hotel Charlie Foxtrot Echo Yankee Zulu Lima Quebec Victor November India Alfa', 'at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat');
+insert into LOSTTHING (id, name, description) values (2, 'Kilo Mike Sierra Oscar X-ray Lima Yankee November Victor Alfa Foxtrot Whiskey Romeo Tango Hotel India Papa Zulu Charlie', 'in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis');
+insert into LOSTTHING (id, name, description) values (3, 'Uniform November Alfa Whiskey Kilo Papa X-ray Bravo Golf India Delta Tango', 'tortor quis turpis sed ante vivamus tortor duis mattis egestas');
+insert into LOSTTHING (id, name, description) values (4, 'Whiskey India Oscar Tango Alfa Charlie X-ray Quebec Uniform Bravo Delta Golf November Lima', 'lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia');
+insert into LOSTTHING (id, name, description) values (5, 'Yankee Oscar Foxtrot Victor Sierra Kilo Golf X-ray Alfa Bravo Tango', 'imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in');
+insert into LOSTTHING (id, name, description) values (6, 'Alfa Delta Kilo Whiskey Hotel Quebec Oscar Romeo India November Bravo Echo', 'in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus');
+insert into LOSTTHING (id, name, description) values (7, 'India Delta November Uniform Sierra X-ray Golf Whiskey Romeo Hotel Tango Kilo Oscar', 'pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus');
+insert into LOSTTHING (id, name, description) values (8, 'Yankee Echo Whiskey Hotel Papa Victor Oscar India Juliett Charlie X-ray Tango Lima Kilo Alfa Mike Golf', 'in eleifend quam a odio in hac habitasse platea dictumst');
+insert into LOSTTHING (id, name, description) values (9, 'Tango Echo November Whiskey Mike Lima Bravo Alfa Papa Uniform Kilo Charlie Yankee Foxtrot India', 'nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas');
+insert into LOSTTHING (id, name, description) values (10, 'Kilo Yankee Whiskey Delta Echo Alfa Tango Foxtrot X-ray Juliett Hotel Oscar Zulu Sierra Victor Quebec Mike Romeo November Papa', 'sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla');
+
+-- QUESTION
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (1, 'Karol Klimonczyk', 1, 'Quinu', 1);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (2, 'Rafal Jankowski', 1, 'Zoonoodle', 2);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (3, 'Dominik Kownacki', 1, 'Twitterwire', 3);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (4, 'Jan Kowalski', 1, 'Wordware', 4);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (5, 'Robert Górski', 1, 'Rhynoodle', 5);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (6, 'Jan Kowalski', 1, 'Skynoodle', 6);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (7, 'Dominik Kownacki', 2, 'Gabtune', 7);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (8, 'Jan Kowalski', 2, 'Oodoo', 8);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (9, 'Robert Górski', 2, 'Flashpoint', 9);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (10, 'Robert Górski', 2, 'Yakidoo', 10);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (11, 'Rafal Jankowski', 2, 'Livetube', 1);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (12, 'Karol Klimonczyk', 2, 'Twiyo', 2);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (13, 'Bartek Golabek', 3, 'Livetube', 3);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (14, 'Michal Wisniewski', 3, 'Livetube', 4);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (15, 'Michal Wisniewski', 3, 'Brainlounge', 5);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (16, 'Szymon Niemiec', 3, 'Wordware', 6);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (17, 'Robert Górski', 3, 'Kaymbo', 7);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (18, 'Robert Górski', 3, 'Riffpedia', 8);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (19, 'Rafal Jankowski', 4, 'Agivu', 9);
+insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (20, 'Rafal Jankowski', 4, 'Mydo', 10);
