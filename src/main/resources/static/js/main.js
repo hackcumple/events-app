@@ -5,8 +5,7 @@
   var video = document.querySelector('video');
   var canvas = document.querySelector('canvas');
   var img = document.querySelector('img');
-  var context=canvas.getContext('2d');
-  var url = "ws://localhost:8080/wsServer";
+  var url = "ws://localhost:8080/WScams-0.0.1-SNAPSHOT/wsServer";
 
   var socket = new WebSocket(url);
 
@@ -27,7 +26,7 @@
 
   });
 
-  setInterval(main ,3000);
+  // setInterval(main ,3000);
 
 
   function main(){
@@ -36,11 +35,8 @@
   }
 
   function drawCanvas(){
-
     context.drawImage(video,0,0,canvas.width, canvas.height);
   }
-
-  console.log(canvas.toDataURL('image/jpeg',1));
 
   function readCanvas(){
     var canvasData = canvas.toDataURL('image/jpeg',1);
@@ -53,7 +49,9 @@
       charArray.push(decodeAstring.charCodeAt(i));
     }
 
-    socket.send( new Blob([new Uint8Array(charArray)],{type:'image/jpeg'}));
+    socket.send( new Blob([new Uint8Array(charArray)],{
+      tpye:'image/jpeg'
+    }));
 
     socket.addEventListener('message',function(event){
       img.src=window.URL.createObjectURL(event.data);
