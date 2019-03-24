@@ -4,13 +4,13 @@ import FormData from 'form-data'
 const ApiService = {
 
     get(slug = "") {
-        return axios.get(`http://localhost:8081/api/${slug}`).catch(error => {
+        return axios.get(`http://localhost:8080/api/${slug}`).catch(error => {
             throw new Error(`[RWV] ApiService ${error}`);
         });
     },
 
     post(slug, params) {
-        return axios.post(`http://localhost:8081/api/${slug}`, params);
+        return axios.post(`http://localhost:8080/api/${slug}`, params);
     },
 
 };
@@ -95,7 +95,7 @@ export const ImageRecognitionService = {
         const data = new FormData();
         data.append('file', file, "turbo_image.jpeg");
 
-        return axios.post(`http://localhost:8081/api/face-recognition/image`, file, {
+        return axios.post(`http://localhost:8080/api/face-recognition/image`, file, {
                 headers: {
                     'accept': 'image/jpeg',
                     'Accept-Language': 'en-US,en;q=0.8',
