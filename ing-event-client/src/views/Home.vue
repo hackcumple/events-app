@@ -50,10 +50,13 @@ export default {
     },
 
     proceedToEventPage(eventData) {
+      this.$store.commit('chooseEvent', eventData.data);
+
       this.$router.push({
           name: 'event-summary',
-          params: eventData.data
-        })
+          // params: eventData.data
+        });
+        
     },
 
     onSubmit(e) {
@@ -67,12 +70,10 @@ export default {
             params: {
                 talkId: '10'
             }
-        })
+        });
     }
   },
   created() {
-    console.log("SZYNOM");
-    // TestApi.testAPI2();
   },
   mounted() {
     this.isLoading = false;

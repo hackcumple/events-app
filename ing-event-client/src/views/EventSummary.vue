@@ -22,14 +22,14 @@ import Menubar from "@/components/Menubar.vue";
 
 export default {
   name: "event_summary",
-  props: ['city', 'date', 'description', 'id', 'name', 'streetName', 'streetNumber'],
   components: {
     Loader,
     Menubar
   },
   data() {
     return {
-      isLoading: true
+      isLoading: true,
+      ...this.$store.state.eventData
     };
   },
   methods: {

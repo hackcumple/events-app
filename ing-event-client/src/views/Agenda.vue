@@ -5,7 +5,7 @@
   <div class="home" v-else>
     <Menubar/>
     <div class="wrapper-normal agenda">
-      <h1>ten evenci XDk</h1>
+      <h1>{{ eventName }}</h1>
       <slick ref="carousel" :options="slickOptions" @reInit="reInit" @init="slickInit">
         <div class="track" v-for="(track, key, index) in agenda" v-bind:key="index">
           <h2 class="where">{{ key }}</h2>
@@ -47,6 +47,11 @@ export default {
         arrows: false
       },
     };
+  },
+  computed: {
+    eventName() {
+      return this.$store.state.eventData.name
+    }
   },
   methods: {
     injectData(agendaData) {
