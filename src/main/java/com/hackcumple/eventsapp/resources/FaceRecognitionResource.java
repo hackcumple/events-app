@@ -3,7 +3,6 @@ package com.hackcumple.eventsapp.resources;
 import com.hackcumple.eventsapp.services.FaceRecognitionService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +20,7 @@ public class FaceRecognitionResource {
 
     private final FaceRecognitionService faceRecognitionService;
 
-    @PostMapping(value = "/image", produces = MediaType.IMAGE_JPEG_VALUE)
+    @PostMapping(value = "/image")
     public ResponseEntity getProcessedImg(@RequestParam("file") MultipartFile file) {
         try {
             return ResponseEntity.ok(this.faceRecognitionService.getFaceRecognitionImg(file.getBytes()));
