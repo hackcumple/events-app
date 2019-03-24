@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper-of-centered-cnt darkbg">
     <div class="centered-cnt">
       <div class="lds-roller">
         <div></div>

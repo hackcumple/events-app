@@ -1,15 +1,10 @@
 <template>
   <div class="home" v-if="isLoading">
+    <Logo/>
     <Loader/>
   </div>
   <div class="home darkbg" v-else>
-    <div class="logo">
-      <h1>
-        ING
-        <span>event</span>
-      </h1>
-    </div>
-
+    <Logo/>
     <div class="wrapper-of-centered-cnt">
       <div class="centered-cnt">
         <h2>Wpisz nr biletu:</h2>
@@ -29,6 +24,7 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import Loader from "@/components/Loader.vue";
+import Logo from "@/components/Logo.vue";
 import { setTimeout } from "timers";
 import { TestApi } from "../common/api-service.js";
 import { TicketService } from "../common/api-service.js";
@@ -37,7 +33,8 @@ export default {
   name: "home",
   components: {
     HelloWorld,
-    Loader
+    Loader,
+    Logo
   },
   data() {
     return {
@@ -45,18 +42,15 @@ export default {
     };
   },
   methods: {
-    justDoSomething() {
-      console.log("Witam eX");
-    },
-
     proceedToEventPage(eventData) {
       this.$store.commit('chooseEvent', eventData.data);
-
+      this.$cookies.set("eventId", eventData.data.id);  
       this.$router.push({
           name: 'event-summary',
-          // params: eventData.data
         });
-        
+    },
+    simulateLoading() {
+      this.isLoading = false; 
     },
 
     onSubmit(e) {
@@ -76,7 +70,7 @@ export default {
   created() {
   },
   mounted() {
-    this.isLoading = false;
+    setTimeout(this.simulateLoading, 1100);
   }
 };
 </script>

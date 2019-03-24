@@ -31,7 +31,7 @@ public class PresentationService {
                     .collect(Collectors.toList());
 
             if (presentationsByTags.size() == 1) {
-                favoritePresentations.add(presentationsByTags.get(0));
+                favoritePresentations.add(presentationsByTags.get(0).cloneToFavoriteTrack());
                 continue;
             } else if (presentationsByTags.isEmpty()) {
                 presentationsByTags = presentationsByEventIdAndStartHour;
@@ -44,7 +44,7 @@ public class PresentationService {
                         .findFirst();
 
                 if (presentationWithTheBestSpeaker.isPresent()) {
-                    favoritePresentations.add(presentationWithTheBestSpeaker.get());
+                    favoritePresentations.add(presentationWithTheBestSpeaker.get().cloneToFavoriteTrack());
                     break;
                 }
             }
@@ -80,8 +80,10 @@ public class PresentationService {
         return presentationRepository.findById(id).get();
     }
 
-    public Map<String,List<Presentation>> getTracks(Long eventId) {
+    public Map<String,List<Presentation>> getTracks(Long eventId) throws CloneNotSupportedException {
         List<Presentation> presentations = presentationRepository.findPresentationByEventId(eventId);
+        List<Presentation> favoriteTrack = getFavoriteTrack(eventId, "JAVA,JAVASCRIPT,BIGDATA");//TODO get from front
+        presentations.addAll(favoriteTrack);
         return presentations.stream()
                 .sorted(Comparator.comparing(Presentation::getStartHour)).collect(Collectors.groupingBy(Presentation::getTag));
     }

@@ -7,7 +7,11 @@ import EventSummary from './views/EventSummary.vue'
 import Login from './views/Login.vue'
 import Talk from './views/Talk.vue'
 import ImageUpload from './views/ImageUpload.vue'
+
 import EventCreation from './views/EventCreation.vue'
+
+import SpeakerEvaluation from "./views/SpeakerEvaluation";
+
 
 Vue.use(Router);
 
@@ -48,6 +52,7 @@ export default new Router({
     },
     {
       path: '/image-upload',
+      alias: '/admin',
       name: 'imageUpload',
       component: ImageUpload
     },
@@ -61,9 +66,14 @@ export default new Router({
       name: 'talk',
       component: Talk,
         props: (route) => ({
-        talkId: 'dupa',
+        talkId: 'test',
         ...route.params
         })
+    },
+    {
+      path: '/speakerevaluation',
+      name: 'speakerevaluation',
+      component: SpeakerEvaluation
     }
   ]
 });

@@ -1,5 +1,6 @@
 package com.hackcumple.eventsapp.services;
 
+import com.hackcumple.eventsapp.data.FaceRecognitionResult;
 import org.opencv.core.*;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
@@ -10,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.util.Base64;
 
 import static org.opencv.imgcodecs.Imgcodecs.IMREAD_UNCHANGED;
 import static org.opencv.imgcodecs.Imgcodecs.imdecode;
@@ -17,7 +19,7 @@ import static org.opencv.imgcodecs.Imgcodecs.imdecode;
 @Service
 public class FaceRecognitionService {
 
-    public byte[] getFaceRecognitionImg(byte[] fileBytes) throws IOException {
+    public FaceRecognitionResult getFaceRecognitionImg(byte[] fileBytes) throws IOException {
         //create OpenCV Mat from byteArray
         Mat src = this.getMatFromImg(fileBytes);
         CascadeClassifier classifier = getCascadeClassifier();
@@ -36,7 +38,7 @@ public class FaceRecognitionService {
 
         MatOfByte mob = new MatOfByte();
         Imgcodecs.imencode(".jpg", src, mob);
-        return mob.toArray();
+        return new FaceRecognitionResult(faceDetections.toArray().length, new String(Base64.getEncoder().encode(mob.toArray())));
     }
 
     public int getFacesAmount(byte[] fileBytes) throws UnsupportedEncodingException {
