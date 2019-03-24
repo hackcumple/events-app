@@ -5,7 +5,7 @@
     <div class="home" v-else>
         <div class="wrapper-normal">
             <div class="admin-img"></div>
-            <h1>Apnel administratora </h1>
+            <h1>Panel administratora </h1>
             <div class="lecturer-section">
                 <img class="avatar" src="./../assets/avatar.png" alt="Avatar">
                 Oceny prelegentów.
@@ -19,7 +19,6 @@
                         <div class="speaker-rank-wrapper">
                             <div class="rank">
                                 <font-awesome-icon  v-for="rate in item.Rate" icon="star" size="lg" class="checked"/><br />
-
                             </div>
                         </div>
                     </li>
@@ -34,12 +33,12 @@
 
     export default {
         name: "speakerevaluation",
-        comments: {
+        components: {
             Loader,
         },
         data() {
             return {
-                isLoading:true,
+                isLoading: true,
                 items: [
                     {Name: "Adam Małysz", Rate:5},
                     {Name: "Mariusz Pudzianowski", Rate:5},

@@ -269,6 +269,8 @@ button {
   .nearby-places-li {
     font: 200 15px/1.5 Helvetica, Verdana, sans-serif;
     border-bottom: 1px solid #ccc;
+    @include clearfix;
+    padding: 7px 0;
   }
 
   .nearby-places-li:last-child {

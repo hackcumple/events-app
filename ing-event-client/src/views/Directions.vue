@@ -5,7 +5,7 @@
     <div class="home" v-else>
         <Menubar/>
         <div class="wrapper-normal">
-            <h1>Wydarzonko name</h1>
+            <h1>{{ name }}</h1>
             <h2 class="where">Katowice, Galeria Rondo Sztuki, Rondo im. Jerzego Ziętka 2</h2>
             <div class="img-cnt">
                 <img src="../assets/map.png">
@@ -49,7 +49,8 @@
                     {Name: 'Złoty Osioł', Type: 'Kuchnia wegetariańska', Distance: '300m', Address: 'Mariacka 1', Image:"place2.jpg"},
                     {Name: 'Tatiana', Type: 'Restauracja', Distance: '650m', Address: 'Staromiejska 5',Image:"place3.jpg"},
                     {Name: 'Kyoto Sushi', Type: 'Kuchnia japońska', Distance: '350m', Address: 'Uniwersytecka 13',Image:"place4.jpg"}
-                ]
+                ],
+                ...this.$store.state.eventData
             };
         },
         methods: {
