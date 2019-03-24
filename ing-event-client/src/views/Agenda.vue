@@ -8,7 +8,7 @@
       <h1>{{ eventName }}</h1>
       <slick ref="carousel" :options="slickOptions" @reInit="reInit" @init="slickInit">
         <div class="track" v-for="(track, key, index) in agenda" v-bind:key="index">
-          <template v-if="key === 'FAVORITE'">
+          <template v-if="key === 'Favorites'">
             <h2 class="green">Wybrane dla Ciebie:</h2>
           </template>
           <template v-else>
