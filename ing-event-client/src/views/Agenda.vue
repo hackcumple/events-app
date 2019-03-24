@@ -6,7 +6,7 @@
     <Menubar/>
     <div class="wrapper-normal agenda">
       <h1>ten evenci XDk</h1>
-      <slick ref="slick" :options="slickOptions" @reInit="reInit" @init="slickInit">
+      <slick ref="carousel" :options="slickOptions" @reInit="reInit" @init="slickInit">
         <div class="track" v-for="(track, key, index) in agenda" v-bind:key="index">
           <h2 class="where">{{ key }}</h2>
           <ul>
@@ -44,6 +44,7 @@ export default {
       agenda: {},
       slickOptions: {
         slidesToShow: 1,
+        arrows: false
       },
     };
   },
@@ -71,6 +72,17 @@ export default {
     this.isLoading = false;
     console.log("getting agenda...");
     AgendaService.getAgenda(1).then(this.injectData);
+  },
+  watch: {
+    agenda: function () {
+        let currIndex = this.$refs.carousel.currentSlide()
+
+        this.$refs.carousel.destroy()
+        this.$nextTick(() => {
+          this.$refs.carousel.create()
+          this.$refs.carousel.goTo(currIndex, true)
+        });
+    }
   }
 };
 // description: "morbi ut odio cras mi pede malesuada in imp
