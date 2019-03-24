@@ -6,7 +6,6 @@ import {faCoffee, faListAlt, faStar, faThumbsUp, faMap, faTicketAlt, faInfoCircl
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Vuex from 'vuex'
 import VueCookies from 'vue-cookies'
-import VueReactiveCookie from 'vue-reactive-cookie';
 
 library.add(faCoffee)
 library.add(faListAlt)
