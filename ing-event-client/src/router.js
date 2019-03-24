@@ -7,6 +7,7 @@ import EventSummary from './views/EventSummary.vue'
 import Login from './views/Login.vue'
 import Talk from './views/Talk.vue'
 import ImageUpload from './views/ImageUpload.vue'
+import AttendeesChart from "./views/AttendeesChart";
 
 import EventCreation from './views/EventCreation.vue'
 
@@ -56,6 +57,11 @@ export default new Router({
       name: 'imageUpload',
       component: ImageUpload
     },
+     {
+         path: '/attendees',
+         name: 'attendees',
+         component: AttendeesChart
+     },
     {
       path: '/event-creation',
       name: 'eventCreation',
