@@ -16,7 +16,7 @@
       <font-awesome-icon icon="ticket-alt" size="2x" /><br />
       <span>Wykład</span>
     </router-link>
-    <router-link to="/info">
+    <router-link to="/lostandfound">
       <font-awesome-icon icon="info-circle" size="2x" /><br />
       <span>Info</span>
     </router-link>

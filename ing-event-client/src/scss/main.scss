@@ -367,3 +367,17 @@ button {
     }
   }
 }
+.img-lost-found {
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+}
+
+.lost-found-description {
+  font-size: 25px;
+  display: block;
+  font-weight: bold;
+}
