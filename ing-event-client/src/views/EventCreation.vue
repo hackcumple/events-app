@@ -40,9 +40,6 @@ export default {
     };
   },
   methods: {
-    justDoSomething() {
-      console.log("Witam eX");
-    }
   },
   created() {
     console.log("SZYNOM3");

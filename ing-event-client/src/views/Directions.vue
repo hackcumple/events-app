@@ -54,9 +54,6 @@
             };
         },
         methods: {
-            justDoSomething() {
-                console.log("Witam eX");
-            },
         },
         created() {
         },

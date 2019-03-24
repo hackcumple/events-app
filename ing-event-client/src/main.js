@@ -6,6 +6,7 @@ import {faCoffee, faListAlt, faStar, faThumbsUp, faMap, faTicketAlt, faInfoCircl
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Vuex from 'vuex'
 import VueCookies from 'vue-cookies'
+import VueReactiveCookie from 'vue-reactive-cookie';
 
 library.add(faCoffee)
 library.add(faListAlt)
@@ -19,7 +20,8 @@ Vue.use(Vuex);
 Vue.use(VueCookies);
 
 VueCookies.config('7d')
-
+ 
+// Vue.use(VueReactiveCookie);
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
@@ -33,11 +35,17 @@ const store = new Vuex.Store({
       streetNumber: '',
       date: '',
       description: ''
+    },
+    lectureNotes: {
+      list: []
     }
   },
   mutations: {
     chooseEvent(state, payload) {
       state.eventData = payload
+    },
+    addNote(state, payload) {
+      state.lectureNotes.list.push(payload);
     }
   }
 })
