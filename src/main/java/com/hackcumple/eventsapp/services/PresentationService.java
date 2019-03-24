@@ -82,7 +82,7 @@ public class PresentationService {
 
     public Map<String,List<Presentation>> getTracks(Long eventId) throws CloneNotSupportedException {
         List<Presentation> presentations = presentationRepository.findPresentationByEventId(eventId);
-        List<Presentation> favoriteTrack = getFavoriteTrack(eventId, "JAVA,JAVASCRIPT,BIGDATA");//TODO get from front
+        List<Presentation> favoriteTrack = getFavoriteTrack(eventId, "JAVA,JAVASCRIPT,SCALA");//TODO get from front
         presentations.addAll(favoriteTrack);
         return presentations.stream()
                 .sorted(Comparator.comparing(Presentation::getStartHour)).collect(Collectors.groupingBy(Presentation::getTag));
