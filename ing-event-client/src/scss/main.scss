@@ -172,4 +172,61 @@ button {
   // .content-cnt {
 
   // }
+
+  .lecturer-section {
+    background: rgb(180, 72, 0);
+    color: white;
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+    .avatar {
+      max-width: 4rem;
+      display: inline;
+      float: left;
+      padding-right: 0.5rem;
+    }
+  }
+
+  .rank-wrapper{
+    background-color: #ffc59e;
+    padding-bottom: 80px;
+    .rank {
+      display: flex;
+      padding: 0rem 0rem 1rem 1rem;
+      .checked {
+        color: #f60;
+      }
+    }
+
+    button {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  }
+
+  .comments {
+    textarea {
+      width: 100%;
+      height: 15vh;
+    }
+  }
+
+  .questions {
+    background-color: #ff6600;
+    padding-bottom: 3vh;
+    ul {
+      list-style-type: none;
+      padding-right: 2rem;
+      padding-left: 2rem;
+
+      li {
+        border: solid 1px rgb(89, 3, 146);
+        margin: 0 0 1vh 0;
+        padding: 0 1vh 0 0;
+
+        p{
+          display: inline-flex;
+        }
+      }
+    }
+  }
 }

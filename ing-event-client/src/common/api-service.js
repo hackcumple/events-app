@@ -94,3 +94,24 @@ export const AgendaService = {
 //     }
 
 //}
+export const ImageRecognitionService = {
+
+    uploadPhoto(file) {
+
+        const data = new FormData();
+        data.append('file', file, "turbo_image.jpeg");
+
+        return axios.post(`http://localhost:8080/api/face-recognition/amount`, file, {
+                headers: {
+                    'accept': 'application/json',
+                    'Accept-Language': 'en-US,en;q=0.8',
+                    'Content-Type': `multipart/form-data; boundary=${data._boundary}`,
+                }
+            })
+            .then((response) => {
+                console.log(response)
+            }).catch((error) => {
+                //handle error
+            });
+    }
+}

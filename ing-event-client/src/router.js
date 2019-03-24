@@ -6,8 +6,9 @@ import Directions from './views/Directions.vue'
 import EventSummary from './views/EventSummary.vue'
 import Login from './views/Login.vue'
 import Talk from './views/Talk.vue'
+import ImageUpload from './views/ImageUpload.vue'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [{
@@ -45,9 +46,18 @@ export default new Router({
       component: Login
     },
     {
+      path: '/image-upload',
+      name: 'imageUpload',
+      component: ImageUpload
+    },
+    {
       path: '/talk',
       name: 'talk',
-      component: Talk
-    },
+      component: Talk,
+        props: (route) => ({
+        talkId: 'dupa',
+        ...route.params
+        })
+    }
   ]
 });
