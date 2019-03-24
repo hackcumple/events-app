@@ -54,7 +54,6 @@ export default new Router({
     },
     {
       path: '/image-upload',
-      alias: '/admin',
       name: 'imageUpload',
       component: ImageUpload
     },
@@ -65,6 +64,7 @@ export default new Router({
      },
     {
       path: '/event-creation',
+      alias: '/admin',
       name: 'eventCreation',
       component: EventCreation
     },

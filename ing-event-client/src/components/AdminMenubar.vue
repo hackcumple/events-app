@@ -1,14 +1,14 @@
 <template>
     <div class="menubar" style="background-color: rgb(230, 102, 17);">
-        <router-link to="/event-summary">
+        <router-link to="/event-creation">
             <font-awesome-icon icon="list-alt" size="lg" /><br />
             <span>Utwórz</span>
         </router-link>
-        <router-link to="/directions">
+        <router-link to="/image-upload">
             <font-awesome-icon icon="coffee" size="lg" /><br />
             <span>Analiza</span>
         </router-link>
-        <router-link to="/agenda">
+        <router-link to="/speakerevaluation">
             <font-awesome-icon icon="list-alt" size="lg" /><br />
             <span>Oceny</span>
         </router-link>
