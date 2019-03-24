@@ -75,4 +75,14 @@ public class PresentationService {
                 .map(Map.Entry::getKey)
                 .collect(toList());
     }
+
+    public Presentation getPresentation(Long id){
+        return presentationRepository.findById(id).get();
+    }
+
+    public Map<String,List<Presentation>> getTracks(Long eventId) {
+        List<Presentation> presentations = presentationRepository.findPresentationByEventId(eventId);
+        return presentations.stream()
+                .sorted(Comparator.comparing(Presentation::getStartHour)).collect(Collectors.groupingBy(Presentation::getTag));
+    }
 }

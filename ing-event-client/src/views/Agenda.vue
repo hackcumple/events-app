@@ -1,5 +1,41 @@
 <template>
-  <div class="about">
-    <h1>Szynom put some AGENDA HERE!</h1>
+  <div class="home" v-if="isLoading">
+    <Loader/>
+  </div>
+  <div class="home" v-else>
+    <Menubar/>
+    <div class="wrapper-normal">
+      <h1>ten evencik</h1>
+      <p>
+        Zapraszamy na zajebiste wydarzenie, wśród prelegentów Harry Potter i profesor McGonagall.
+      </p>
+    </div>
   </div>
 </template>
+
+<script>
+import Loader from "@/components/Loader.vue";
+import Menubar from "@/components/Menubar.vue";
+
+export default {
+  name: "directions",
+  components: {
+    Loader,
+    Menubar
+  },
+  data() {
+    return {
+      isLoading: true
+    };
+  },
+  methods: {
+    justDoSomething() {
+      console.log("Witam eX");
+    }
+  },
+  created() {},
+  mounted() {
+    this.isLoading = false;
+  }
+};
+</script>
