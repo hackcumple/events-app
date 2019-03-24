@@ -13,6 +13,10 @@
             type="text"
             name="event-description"
           >
+           <h3>Domena:</h3>
+          <input type="text" name="event-name">
+           <h3>Miejsce:</h3>
+          <input type="text" name="event-name">
           <button type="submit" style="display: grid; width: 100%;">Stwórz wydarzenie</button>
         </form>
       </div>

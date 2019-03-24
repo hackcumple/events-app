@@ -14,7 +14,7 @@ import EventCreation from './views/EventCreation.vue'
 import SpeakerEvaluation from "./views/SpeakerEvaluation";
 import Transcription from './views/Transcription.vue'
 import LostAndFound from "./views/LostAndFound";
-
+import Rating from "./views/Rating";
 
 Vue.use(Router);
 
@@ -94,6 +94,11 @@ export default new Router({
             path: '/lostandfound',
             name: 'lostandfound',
             component: LostAndFound
-        }
+        },
+        {
+          path: '/rating',
+          name: 'rating',
+          component: Rating
+      }
     ]
 });
