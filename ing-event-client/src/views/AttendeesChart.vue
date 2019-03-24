@@ -3,7 +3,7 @@
         <Loader/>
     </div>
     <div class="home" v-else>
-        <Menubar/>
+        <PrelegentMenubar/>
         <div class="wrapper-normal">
             <div class="event-img-cnt"></div>
             <h1>Co nowego w Javie 12? </h1>
@@ -21,7 +21,7 @@
 
 <script>
     import Loader from "@/components/Loader.vue";
-    import Menubar from "@/components/Menubar.vue";
+    import PrelegentMenubar from "@/components/PrelegentMenubar.vue";
     import Vue from 'vue';
     import Trend from 'vuetrend';
     Vue.use(Trend);
@@ -30,8 +30,8 @@
         name: "attendees",
         components: {
             Loader,
-            Menubar,
-        },
+          PrelegentMenubar,
+    },
         data() {
             return {
                 isLoading: true

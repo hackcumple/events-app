@@ -59,6 +59,7 @@ export default new Router({
     },
      {
          path: '/attendees',
+       alias: '/prelegent',
          name: 'attendees',
          component: AttendeesChart
      },
@@ -84,6 +85,7 @@ export default new Router({
     },
 {
   path: '/transcription',
+    alias: '/prelegent',
     name: 'transcription',
   component: Transcription
 },
