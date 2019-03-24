@@ -53,26 +53,11 @@
       charArray.push(decodeAstring.charCodeAt(i));
     }
 
-    socket.send( new Blob([new Uint8Array(charArray)],{
-      tpye:'image/jpeg'
-    }));
+    socket.send( new Blob([new Uint8Array(charArray)],{type:'image/jpeg'}));
 
     socket.addEventListener('message',function(event){
       img.src=window.URL.createObjectURL(event.data);
     });
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
 })();

@@ -11,9 +11,8 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
-//@ServerEndpoint(value="/wsServer")
-@ServerEndpoint(value = "/wsServer", configurator = CustomSpringConfigurator.class)
-public class WsServer {
+@ServerEndpoint(value = "/wsServer")
+public class StreamingWsServer {
 
     @OnOpen
     public void OnOpen(Session session) {
