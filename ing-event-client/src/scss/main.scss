@@ -229,6 +229,54 @@ button {
       }
     }
   }
+
+  .nearby-places-ul {
+    list-style-type: none;
+    width: 100vw;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .nearby-places-li {
+    font: 200 15px/1.5 Helvetica, Verdana, sans-serif;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .nearby-places-li:last-child {
+    border: none;
+  }
+
+  .nearby-places-li a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    width: 200px;
+
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+  }
+
+  .nearby-places-li a:hover {
+    font-size: 20px;
+    background: #f6f6f6;
+  }
+
+  .nearby-places-name {
+    font-size: 25px;
+    display: block;
+    font-weight: bold;
+  }
+
+  .nearby-places-img {
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-right: 5px;
+  }
+
 }
 
 
