@@ -13,7 +13,7 @@
             <li v-for="presentation in track" v-bind:key="presentation.id">
               <span class="agenda-line-item agenda-hour">{{ presentation.startHour }}:00</span>
               <span class="agenda-line-item agenda-content">
-                <router-link to="/talk">
+                <router-link to="/talk" style="text-decoration: none;">
                   <span class="title">{{ presentation.name }}</span>
                   <br>
                   <span class="speaker">{{ presentation.speaker }}</span>
