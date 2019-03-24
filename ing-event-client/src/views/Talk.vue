@@ -49,12 +49,16 @@
         </div>
       </div>
     </div>
-  </div>
+        <video class="streaming"></video>
+    </div>
+
 </template>
 
 <script>
   import Loader from "@/components/Loader.vue";
   import Menubar from "@/components/Menubar.vue";
+
+
 
   export default {
     name: "talk",
@@ -77,12 +81,23 @@
     },
     methods: {
       justDoSomething() {
-        console.log("Witam eX");
       },
-
+      streamingVideo(){
+        let video = document.querySelector('video');
+        let constraints={
+          video:true,
+          audio:false
+        };
+        navigator.mediaDevices.getUserMedia(constraints).then(function(stream){
+          video.srcObject=stream;
+          video.play();
+        }).catch(function(err){
+        });
+      },
 
       voteUp(question) {
         question.votes +=1;
+
       }
     },
     computed: {
@@ -92,10 +107,13 @@
         });
       }
     },
-    created() {},
+    created() {
+    },
     mounted() {
-      console.log(this.$router);
       this.isLoading = false;
-    }
+    },
+    updated() {
+        this.streamingVideo();
+    },
   };
 </script>
