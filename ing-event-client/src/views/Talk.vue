@@ -80,8 +80,6 @@
       };
     },
     methods: {
-      justDoSomething() {
-      },
       streamingVideo(){
         let video = document.querySelector('video');
         let constraints={

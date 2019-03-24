@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import {faCoffee, faListAlt, faStar, faThumbsUp} from '@fortawesome/free-solid-svg-icons'
+import {faCoffee, faListAlt, faStar, faThumbsUp, faMap, faTicketAlt, faInfoCircle} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Vuex from 'vuex'
 import VueCookies from 'vue-cookies'
@@ -11,6 +11,9 @@ library.add(faCoffee)
 library.add(faListAlt)
 library.add(faStar)
 library.add(faThumbsUp)
+library.add(faMap)
+library.add(faTicketAlt)
+library.add(faInfoCircle)
 
 Vue.use(Vuex);
 Vue.use(VueCookies);
