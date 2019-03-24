@@ -63,6 +63,13 @@ export const TicketService = {
     }
 };
 
+export const TranscriptionService = {
+    getTranscription() {
+        return ApiService.get(`speech/getTranscriptionDetails/1`);
+    }
+};
+
+
 export const AgendaService = {
     getAgenda(ticketId) {
         return ApiService.get(`presentation/tracks/${ticketId}`, {

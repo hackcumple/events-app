@@ -12,6 +12,7 @@ import AttendeesChart from "./views/AttendeesChart";
 import EventCreation from './views/EventCreation.vue'
 
 import SpeakerEvaluation from "./views/SpeakerEvaluation";
+import Transcription from './views/Transcription.vue'
 
 
 Vue.use(Router);
@@ -80,6 +81,11 @@ export default new Router({
       path: '/speakerevaluation',
       name: 'speakerevaluation',
       component: SpeakerEvaluation
-    }
+    },
+{
+  path: '/transcription',
+    name: 'transcription',
+  component: Transcription
+},
   ]
 });

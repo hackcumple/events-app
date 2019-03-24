@@ -146,3 +146,16 @@ insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (17,
 insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (18, 'Robert Górski', 3, 'Riffpedia', 8);
 insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (19, 'Rafal Jankowski', 4, 'Agivu', 9);
 insert into QUESTION (id, speaker, PRESENTATIONID, question, rating) values (20, 'Rafal Jankowski', 4, 'Mydo', 10);
+
+
+INSERT INTO TRANSCRIPTION(ID, ORDERID, PRESENTATIONID, SPEAKERNAME, TEXT) VALUES
+(1, 'SSMMOU20190324114207', 1, 'testName', STRINGDECODE('kt\u00f3re S\u0142owa kt\u00f3re m\u00f3wi\u0119 powinny si\u0119 powtarza\u0107 a niekt\u00f3re s\u0142owa kt\u00f3re m\u00f3wi\u0119 nie powinny si\u0119 powtarza\u0107 '));
+
+
+
+INSERT INTO WORD_DETAILS(ID, COUNT, WORD, TRANSCRIPTION_ID) VALUES
+(2, 22, STRINGDECODE('yyyy'), 1),
+(3, 17, STRINGDECODE('java'), 1),
+(4, 12, STRINGDECODE('poniewaz'), 1),
+(5, 9, STRINGDECODE('ale'), 1),
+(6, 5, 'serwis', 1);

@@ -67,20 +67,6 @@ public class SpeechService {
     public Transcription GetTranscriptionDetails(Long presentationId) {
 
         Transcription transcription = transcriptionRepository.findByPresentationId(presentationId).get();
-        TranscriptionResult transcriptionResult = GetTranscription(transcription.getOrderId());
-
-        Map<String, List<Word>> words =
-                transcriptionResult.getWord().stream().collect(Collectors.groupingBy(Word::getWord));
-
-        transcription.setOrderId(transcription.getOrderId());
-        transcription.setSpeakerName("testName");
-        transcription.setText(transcriptionResult.getText());
-        transcription.setWordDetails(words.entrySet()
-                .stream().map(e -> WordDetails.builder().word(e.getKey()).count(e.getValue().size()).transcription(transcription).build()).collect(Collectors.toList()));
-        transcription.setWordDetails(transcription.getWordDetails()
-                .stream().filter(e->e.getCount() >= 2).sorted(Comparator.comparing(WordDetails::getCount).reversed()).collect(Collectors.toList()));
-
-        transcriptionRepository.save(transcription);
         return transcription;
     }
 

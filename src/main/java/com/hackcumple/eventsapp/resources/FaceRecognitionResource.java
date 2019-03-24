@@ -18,23 +18,23 @@ import java.io.IOException;
 @RequestMapping("/api/face-recognition")
 public class FaceRecognitionResource {
 
-    private final FaceRecognitionService faceRecognitionService;
+//    private final FaceRecognitionService faceRecognitionService;
 
-    @PostMapping(value = "/image")
-    public ResponseEntity getProcessedImg(@RequestParam("file") MultipartFile file) {
-        try {
-            return ResponseEntity.ok(this.faceRecognitionService.getFaceRecognitionImg(file.getBytes()));
-        } catch (IOException e) {
-            return ResponseEntity.noContent().build();
-        }
-    }
-
-    @PostMapping(value = "/amount")
-    public ResponseEntity getFacesAmount(@RequestParam("file") MultipartFile file) {
-        try {
-            return ResponseEntity.ok(this.faceRecognitionService.getFacesAmount(file.getBytes()));
-        } catch (IOException e) {
-            return ResponseEntity.noContent().build();
-        }
-    }
+//    @PostMapping(value = "/image")
+//    public ResponseEntity getProcessedImg(@RequestParam("file") MultipartFile file) {
+//        try {
+//            return ResponseEntity.ok(this.faceRecognitionService.getFaceRecognitionImg(file.getBytes()));
+//        } catch (IOException e) {
+//            return ResponseEntity.noContent().build();
+//        }
+//    }
+//
+//    @PostMapping(value = "/amount")
+//    public ResponseEntity getFacesAmount(@RequestParam("file") MultipartFile file) {
+//        try {
+//            return ResponseEntity.ok(this.faceRecognitionService.getFacesAmount(file.getBytes()));
+//        } catch (IOException e) {
+//            return ResponseEntity.noContent().build();
+//        }
+//    }
 }
