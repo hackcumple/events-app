@@ -1,19 +1,24 @@
 <template>
   <div class="wrapper-of-centered-cnt darkbg">
-      <div class="centered-cnt">
+    <PrelegentMenubar/>
+      <div class="event-img-cnt"></div>
+
+    <div class="centered-cnt">
     <h1>Ocena przebiegu prezentacji</h1>
     <bar-chart :chart-data="datacollection"></bar-chart>
     <button @click="fillData()">Przykładowe punktacje</button>
-  </div>
+    </div>
   </div>
 </template>
 
 <script>
   import BarChart from '../components/LineChart.js'
+  import PrelegentMenubar from "@/components/PrelegentMenubar.vue";
 
   export default {
     components: {
-      BarChart
+      BarChart,
+      PrelegentMenubar
     },
     data () {
       return {
