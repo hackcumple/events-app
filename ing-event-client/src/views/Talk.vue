@@ -50,7 +50,7 @@
     </div>
       <div style="background-color: rgb(224, 142, 107);">
         <h2 style="margin: 0;">Podgląd na żywo:</h2>
-        <video class="streaming"></video>
+        <video class="streaming" style="margin-top: 3vh; margin-bottom: 13vh;"></video>
       </div>
     </div>
 
