@@ -23,7 +23,14 @@ Vue.config.productionTip = false
 
 const store = new Vuex.Store({
   state: {
-    eventData: {}
+    eventData: {
+      name: '',
+      city: '',
+      streetName: '',
+      streetNumber: '',
+      date: '',
+      description: ''
+    }
   },
   mutations: {
     chooseEvent(state, payload) {

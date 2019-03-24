@@ -11,12 +11,13 @@ export default {
   methods: {
     prefetchEventData(eventData) {
       this.$store.commit('chooseEvent', eventData.data);
-      this.$cookies.set("eventId", eventData.data.id);
+      console.log("prefetch");
     }
   },
   created() {
     if (this.$cookies.isKey("eventId"))
     {
+      console.log("Found cookie.")
       TicketService.login(this.$cookies.get("eventId")).then(this.prefetchEventData);
     }
   }
