@@ -1,10 +1,9 @@
 <template>
   <div class="wrapper-normal">
-    
-      <label>File to stash:</label>
-      <input type="file" name="file" required>
-      <button v-on:click="onSubmit()">Submit</button>
-
+    <label>File to stash:</label>
+    <img id="ItemPreview" src>
+    <input type="file" name="file" required>
+    <button v-on:click="onSubmit()">Submit</button>
   </div>
 </template>
 
@@ -25,15 +24,14 @@ export default {
     },
 
     onSubmit(callback) {
-      console.log("asdasdasdasd");
       //get the input and the file
       var input = document.querySelector("input[type=file]"),
         file = input.files[0];
       var fd = new FormData();
       fd.append("file", file);
-
-      console.log("aaaaaaa");
-      ImageRecognitionService.uploadPhoto(fd);
+      var byteArrResponse = ImageRecognitionService.uploadPhoto(fd);
+      document.getElementById("ItemPreview").src =
+        "data:image/png;base64," + byteArrResponse;
     }
   },
 
