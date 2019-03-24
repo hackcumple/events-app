@@ -2,6 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 @import url('https://fonts.googleapis.com/css?family=Signika');
 
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -113,6 +121,51 @@ button {
   .img-cnt {
     img {
       max-width: 100%;
+    }
+  }
+
+  .track {
+    @include clearfix;
+  }
+
+  .agenda-line-item {
+    display: block;
+    background: #f6f6f6;
+    padding: 5px;
+    float: left;
+
+    &.agenda-hour {
+      background: rgb(89, 3, 146);
+      width: 60px;
+      height: 32px;
+      font-size: 1.1rem;
+      color: #fff;
+      font-weight: bold;
+      font-family: Signika, sans-serif;
+    }
+
+    &.agenda-content {
+      width: calc(100% - 60px);
+      min-height: 32px;
+      margin-bottom: 3px;
+
+      .title {
+        font-size: 1.2rem;
+      }
+
+      .speaker {
+        font-size: 0.9rem;
+        color: red;
+      }
+    }
+  }
+
+  &.agenda {
+    ul {
+      padding: 0;
+    }
+    li {
+      list-style: none;
     }
   }
 

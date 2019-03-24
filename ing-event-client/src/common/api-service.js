@@ -24,7 +24,6 @@ export default ApiService;
 //     }
 //}
 
-
 export const TalkService = {
     sendTalkRate(rate, talkId) {
         return ApiService.post(`presentation/${talkId}/rate`, {
@@ -64,6 +63,13 @@ export const TicketService = {
     }
 };
 
+export const AgendaService = {
+    getAgenda(ticketId) {
+        return ApiService.get(`presentation/tracks/${ticketId}`, {
+            value: ticketId
+        });
+    }
+};
 // export const ImageRecognitionService = {
 
 //     uploadPhoto() {
