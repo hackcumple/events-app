@@ -41,6 +41,7 @@ export default {
     position: fixed;
     bottom: 0;
     width: 100vw;
+    z-index: 90;
   }
   a {
     color: #fff;

@@ -8,12 +8,18 @@
       <h1>{{ eventName }}</h1>
       <slick ref="carousel" :options="slickOptions" @reInit="reInit" @init="slickInit">
         <div class="track" v-for="(track, key, index) in agenda" v-bind:key="index">
-          <h2 class="where">{{ key }}</h2>
+          <template v-if="key === 'FAVORITE'">
+            <h2 class="green">Wybrane dla Ciebie:</h2>
+          </template>
+          <template v-else>
+            <h2 class="where">{{ key }}</h2>
+          </template>
+          
           <ul>
             <li v-for="presentation in track" v-bind:key="presentation.id">
               <span class="agenda-line-item agenda-hour">{{ presentation.startHour }}:00</span>
               <span class="agenda-line-item agenda-content">
-                <router-link to="/talk">
+                <router-link to="/talk" style="text-decoration: none;">
                   <span class="title">{{ presentation.name }}</span>
                   <br>
                   <span class="speaker">{{ presentation.speaker }}</span>
@@ -48,6 +54,7 @@ export default {
         slidesToShow: 1,
         arrows: false
       },
+      key: ''
     };
   },
   computed: {

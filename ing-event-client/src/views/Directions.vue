@@ -45,7 +45,7 @@
             return {
                 isLoading: true,
                 items: [
-                    {Name: 'Via Toscana', Type: 'Kuchnia śrudziemnomorska', Distance: '300m', Address: 'Uniwersytecka 13', Image:"place1.jpg"},
+                    {Name: 'Via Toscana', Type: 'Kuchnia śródziemnomorska', Distance: '300m', Address: 'Uniwersytecka 13', Image:"place1.jpg"},
                     {Name: 'Złoty Osioł', Type: 'Kuchnia wegetariańska', Distance: '300m', Address: 'Mariacka 1', Image:"place2.jpg"},
                     {Name: 'Tatiana', Type: 'Restauracja', Distance: '650m', Address: 'Staromiejska 5',Image:"place3.jpg"},
                     {Name: 'Kyoto Sushi', Type: 'Kuchnia japońska', Distance: '350m', Address: 'Uniwersytecka 13',Image:"place4.jpg"}

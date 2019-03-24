@@ -28,7 +28,7 @@
             </div>
         </div>
         <a href="./../assets/transcript.pdf" download="transcript.pdf">
-            <img style="height: 100px; display: block; margin: auto;" src="./../assets/transcript.png" alt="Transcript">
+            <img style="height: 48vh; display: block; margin: auto; padding-bottom: 20vh;" src="./../assets/transcript.png" alt="Transcript">
         </a>
     </div>
 
