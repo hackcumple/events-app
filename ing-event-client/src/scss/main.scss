@@ -83,6 +83,29 @@ button {
   }
 }
 
+.wrapper-of-centered-cnt-event-create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 80vh;
+
+  h1, h2 {
+    margin-top: 0;
+    background-color:rgb(180, 72, 0); ;
+  }
+
+  .centered-cnt {
+    text-align: center;
+    width: 80%;
+
+    h1, h2 {
+      margin-top: 0;
+      background-color:rgb(180, 72, 0); ;
+    }
+  }
+}
+
 .wrapper-normal {
   h1 {
     margin: 0;
@@ -114,6 +137,12 @@ button {
 
   .event-img-cnt {
     background-image: url(assets/event_img1.png);
+    background-size: cover;
+    min-height: 20vh;
+  }
+
+  .event-creation-img-cnt {
+    background-image: url(assets/create.jpg);
     background-size: cover;
     min-height: 20vh;
   }

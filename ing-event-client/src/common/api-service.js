@@ -70,30 +70,17 @@ export const AgendaService = {
         });
     }
 };
-// export const ImageRecognitionService = {
 
-//     uploadPhoto() {
+export const EventCreationService = {
+    createEvent(name, description, image) {
+        const data = new FormData();
+        data.append('name', name);
+        data.append('description', description);
+        data.append('file', image, 'event-image.jpeg');
+        //add axios request if needed ...
+    }
+};
 
-//         let data = new FormData();
-//         data.append('file', file, file.fileName);
-
-//         return (dispatch) => {
-//             axios.post(URL, data, {
-//                     headers: {
-//                         'accept': 'application/json',
-//                         'Accept-Language': 'en-US,en;q=0.8',
-//                         'Content-Type': `multipart/form-data; boundary=${data._boundary}`,
-//                     }
-//                 })
-//                 .then((response) => {
-//                     //handle success
-//                 }).catch((error) => {
-//                     //handle error
-//                 });
-//         };
-//     }
-
-//}
 export const ImageRecognitionService = {
 
     uploadPhoto(file) {

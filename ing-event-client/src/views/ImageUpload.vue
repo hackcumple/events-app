@@ -14,7 +14,7 @@ import { ImageRecognitionService } from "../common/api-service.js";
 
 export default {
   props: ["numberOfPeople"],
-  name: "directions",
+  name: "image_upload",
   components: {},
   data() {
     return {
