@@ -45,18 +45,12 @@ export default {
     };
   },
   methods: {
-    justDoSomething() {
-      console.log("Witam eX");
-    },
-
     proceedToEventPage(eventData) {
       this.$store.commit('chooseEvent', eventData.data);
-
+      this.$cookies.set("eventId", eventData.data.id);  
       this.$router.push({
           name: 'event-summary',
-          // params: eventData.data
         });
-        
     },
 
     onSubmit(e) {
