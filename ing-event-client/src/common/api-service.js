@@ -103,15 +103,10 @@ export const ImageRecognitionService = {
 
         return axios.post(`http://localhost:8080/api/face-recognition/image`, file, {
                 headers: {
-                    'accept': 'application/json',
+                    'accept': 'image/jpeg',
                     'Accept-Language': 'en-US,en;q=0.8',
                     'Content-Type': `multipart/form-data; boundary=${data._boundary}`,
                 }
-            })
-            .then((response) => {
-                console.log(response)
-            }).catch((error) => {
-                //handle error
             });
     }
 }

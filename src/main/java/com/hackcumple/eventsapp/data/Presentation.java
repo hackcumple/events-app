@@ -1,8 +1,6 @@
 package com.hackcumple.eventsapp.data;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -10,6 +8,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Setter
 @Getter
+@Builder
+@AllArgsConstructor
 public class Presentation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,4 +24,14 @@ public class Presentation {
     Long eventId;
     @Column(name = "STARTHOUR")
     Long startHour;
+
+    public Presentation cloneToFavoriteTrack() {
+        return Presentation.builder()
+                .name(this.name)
+                .startHour(this.startHour)
+                .speaker(this.speaker)
+                .tag("FAVORITE")
+                .build();
+
+    }
 }

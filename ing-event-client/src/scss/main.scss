@@ -191,7 +191,7 @@ button {
     padding-bottom: 80px;
     .rank {
       display: flex;
-      padding: 0rem 0rem 1rem 1rem;
+      padding: 0 0 1rem 1rem;
       .checked {
         color: #f60;
       }
@@ -277,8 +277,27 @@ button {
     margin-right: 5px;
   }
 
-}
+  .file-upload-section {
+    display: grid;
+    vertical-align: middle;
+    text-align: center;
+    background: rgb(180, 72, 0);
+    color: white;
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+  }
 
+  .face-recognition-container {
+    background: #f60;
+    height: 60vh;
+    img {
+      max-height: 40vh;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
 
 .streaming{
   display: block;
@@ -286,4 +305,27 @@ button {
   height: 300px;
   margin-bottom: 0px;
   padding-bottom: 50px;
+}
+
+.admin-img {
+  background-image: url(assets/admin_logo.jpg);
+  background-size: cover;
+  min-height: 20vh;
+}
+
+.speaker-logo-img {
+  width: 60px;
+  height: 60px;
+  float: left;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.speaker-rank-wrapper{
+  .rank {
+    display: flex;
+    .checked {
+      color: #f60;
+    }
+  }
 }
