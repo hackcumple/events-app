@@ -106,7 +106,7 @@ insert into TICKET (id, EVENTID) values (4, 4);
 insert into TICKET (id, EVENTID) values (5, 5);
 
 -- EVENT
-insert into EVENT (id, name, description, date, city, streetName, streetNumber) values (1, 'Isuzu', 'eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium', '2018-04-11 12:02:14', 'Chenfangji', 'Village Green', '65');
+insert into EVENT (id, name, description, date, city, streetName, streetNumber) values (1, 'Konferencja ING Tech', '', '2018-04-11 12:02:14', 'Katowice', 'Galeria Rondo Sztuki', '2');
 insert into EVENT (id, name, description, date, city, streetName, streetNumber) values (2, 'Saturn', 'cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras', '2018-08-04 22:18:55', 'Huacrachuco', 'Helena', '6');
 insert into EVENT (id, name, description, date, city, streetName, streetNumber) values (3, 'Ford', 'sed interdum venenatis turpis enim blandit mi in porttitor pede', '2018-08-23 04:39:10', 'Jatiwangi', 'Thompson', '879');
 insert into EVENT (id, name, description, date, city, streetName, streetNumber) values (4, 'Honda', 'ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis', '2019-03-04 10:11:11', 'Liufu', 'Columbus', '9');

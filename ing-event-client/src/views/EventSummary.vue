@@ -8,9 +8,18 @@
       <div class="event-img-cnt"></div>
       <h1>{{ name }}</h1>
       <h2 class="where">{{ city }}, {{ streetName }} {{ streetNumber }} </h2>
-      <h2 class="when">{{ date }}</h2>
+      <h2 class="when">sobota, 8 kwietnia 2019</h2>
       <p>
-        {{description}}
+        <br>
+        Pełen praktycznych prelekcji. Stawiamy na jakość i odpowiadamy na aktualne potrzeby szkoleniowe społeczności IT w całej Polsce.
+        <br>
+        <br>
+        .NET, Architektury aplikacji, Bottega IT Minds, Bottega Frontend, C++, Cloud Computing, Data science, Java, JavaScript, Mobile, PHP, Python, Soft Skills & business relations – zapewniamy najlepszych praktyków z wybranych dziedzin.
+        <br>
+        <br>
+        Zapraszamy najbardziej znanych wyjadaczy IT ! Znacie ich z ogólnopolskiej edycji 4Developers.
+
+
       </p>
     </div>
   </div>
