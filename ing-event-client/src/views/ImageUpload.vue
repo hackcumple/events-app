@@ -3,7 +3,7 @@
     <Loader/>
   </div>
   <div class="home" v-else>
-    <Menubar/>
+    <AdminMenubar/>
     <div class="wrapper-normal">
       <div class="event-img-cnt"></div>
       <h1>Ile osób było obecnych na wykładzie?</h1>
@@ -22,14 +22,14 @@
 
 <script>
   import Loader from "@/components/Loader.vue";
-  import Menubar from "@/components/Menubar.vue";
+  import AdminMenubar from "@/components/AdminMenubar.vue";
   import { ImageRecognitionService } from "../common/api-service.js";
 
 export default {
   name: "imageUpload",
   components: {
     Loader,
-    Menubar
+    AdminMenubar
   },
   data() {
     return {
