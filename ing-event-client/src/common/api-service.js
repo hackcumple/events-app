@@ -71,7 +71,7 @@ export const ImageRecognitionService = {
         const data = new FormData();
         data.append('file', file, "turbo_image.jpeg");
 
-        return axios.post(`face-recognition`, data, {
+        return axios.post(`http://localhost:8080/api/face-recognition/amount`, file, {
                 headers: {
                     'accept': 'application/json',
                     'Accept-Language': 'en-US,en;q=0.8',
@@ -79,7 +79,7 @@ export const ImageRecognitionService = {
                 }
             })
             .then((response) => {
-                //handle success
+                console.log(response)
             }).catch((error) => {
                 //handle error
             });
