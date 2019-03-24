@@ -306,3 +306,26 @@ button {
   margin-bottom: 0px;
   padding-bottom: 50px;
 }
+
+.admin-img {
+  background-image: url(assets/admin_logo.jpg);
+  background-size: cover;
+  min-height: 20vh;
+}
+
+.speaker-logo-img {
+  width: 60px;
+  height: 60px;
+  float: left;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.speaker-rank-wrapper{
+  .rank {
+    display: flex;
+    .checked {
+      color: #f60;
+    }
+  }
+}

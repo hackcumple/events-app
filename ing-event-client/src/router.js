@@ -7,6 +7,7 @@ import EventSummary from './views/EventSummary.vue'
 import Login from './views/Login.vue'
 import Talk from './views/Talk.vue'
 import ImageUpload from './views/ImageUpload.vue'
+import SpeakerEvaluation from "./views/SpeakerEvaluation";
 
 Vue.use(Router);
 
@@ -59,6 +60,11 @@ export default new Router({
         talkId: 'test',
         ...route.params
         })
+    },
+    {
+      path: '/speakerevaluation',
+      name: 'speakerevaluation',
+      component: SpeakerEvaluation
     }
   ]
 });
