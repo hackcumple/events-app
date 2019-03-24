@@ -51,7 +51,7 @@ export default {
               "Średnia ocen przyznanych przez uczestników w kolejnych etapach prezentacji",
             backgroundColor: "#e66611",
             data: [
-             2,5,3,0
+             0,2,5,4
             ]
           }
         ],
