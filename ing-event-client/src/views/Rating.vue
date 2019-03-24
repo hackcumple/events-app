@@ -1,14 +1,28 @@
 <template>
-  <div class="wrapper-of-centered-cnt darkbg">
+  <div class="home" v-else>
     <PrelegentMenubar/>
+    <div class="wrapper-normal">
       <div class="event-img-cnt"></div>
+      <h1>Ocena przebiegu prezentacji </h1>
+      <div class="rating-chart">
 
-    <div class="centered-cnt">
-    <h1>Ocena przebiegu prezentacji</h1>
-    <bar-chart :chart-data="datacollection"></bar-chart>
-    <button @click="fillData()">Przykładowe punktacje</button>
+      <bar-chart :chart-data="datacollection"></bar-chart>
+    </div>
+      <!--<div class="questions">-->
+        <!--<h2>Najczęściej powtarzane słowa: </h2>-->
+      <!--</div>-->
     </div>
   </div>
+
+  <!--<div class="wrapper-of-centered-cnt darkbg">-->
+    <!--<PrelegentMenubar/>-->
+      <!--<div class="event-img-cnt"></div>-->
+
+    <!--<div class="centered-cnt">-->
+    <!--<h1>Ocena przebiegu prezentacji</h1>-->
+    <!--<bar-chart :chart-data="datacollection"></bar-chart>-->
+    <!--</div>-->
+  <!--</div>-->
 </template>
 
 <script>
