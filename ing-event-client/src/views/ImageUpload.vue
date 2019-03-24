@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper-normal">
     <label>File to stash:</label>
-    <img id="ItemPreview" src>
+    <img id="ItemPreview" src="">
     <input type="file" name="file" required>
     <button v-on:click="onSubmit()">Submit</button>
   </div>
