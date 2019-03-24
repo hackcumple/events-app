@@ -26,8 +26,6 @@
   import { ImageRecognitionService } from "../common/api-service.js";
 
 export default {
-
-  props: ["numberOfPeople"],
   name: "image_upload",
   components: {
     Loader,

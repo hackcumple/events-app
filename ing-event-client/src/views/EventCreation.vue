@@ -1,21 +1,19 @@
 <template>
   <div class="wrapper-normal darkbg">
+    <AdminMenubar/>
     <div class="event-creation-img-cnt"></div>
     <h2>Kreator wydarzeń</h2>
     <div class="wrapper-of-centered-cnt-event-create">
       <div class="centered-ctn">
-        <form v-on:submit.prevent="onSubmit" class="questions">
+        <form v-on:submit.prevent="onSubmit">
           <h3>Nazwa wydarzenia:</h3>
-          <input type="text" name="event-name" placeholder="np. Piknik ING">
+          <input type="text" name="event-name">
           <h3>Opis wydarzenia:</h3>
           <input
             type="text"
             name="event-description"
-            placeholder="np. Piknik rodzinny dla pracowników ING. Piwo i mięsiwo za DARMO!"
           >
-          <h3>Obrazek:</h3>
-          <input type="file" name="event-image">
-          <button type="submit">Stwórz wydarzenie</button>
+          <button type="submit" style="display: grid; width: 100%;">Stwórz wydarzenie</button>
         </form>
       </div>
     </div>
@@ -24,11 +22,13 @@
 
 <script>
 import Loader from "@/components/Loader.vue";
+import AdminMenubar from "../components/AdminMenubar";
 
 export default {
   name: "event_creation",
   components: {
-    Loader
+    Loader,
+    AdminMenubar
   },
   data() {
     return {

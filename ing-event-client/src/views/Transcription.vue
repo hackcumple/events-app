@@ -3,7 +3,7 @@
         <Loader/>
     </div>
     <div class="home" v-else>
-        <Menubar/>
+        <PrelegentMenubar/>
         <div class="wrapper-normal">
             <div class="event-img-cnt"></div>
             <h1>Transkrypcja </h1>
@@ -36,7 +36,7 @@
 
 <script>
   import Loader from "@/components/Loader.vue";
-  import Menubar from "@/components/Menubar.vue";
+  import PrelegentMenubar from "@/components/PrelegentMenubar.vue";
   import {TranscriptionService} from "../common/api-service.js";
 
 
@@ -44,7 +44,7 @@
     name: "transcription",
     components: {
       Loader,
-      Menubar
+      PrelegentMenubar
     },
     data() {
       return {

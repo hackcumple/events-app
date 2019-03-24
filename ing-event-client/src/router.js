@@ -13,79 +13,87 @@ import EventCreation from './views/EventCreation.vue'
 
 import SpeakerEvaluation from "./views/SpeakerEvaluation";
 import Transcription from './views/Transcription.vue'
+import LostAndFound from "./views/LostAndFound";
 
 
 Vue.use(Router);
 
 export default new Router({
-  routes: [{
-      path: '/',
-      name: 'home',
-      component: Home
+    routes: [{
+        path: '/',
+        name: 'home',
+        component: Home
     },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import( /* webpackChunkName: "about" */ './views/About.vue')
-    },
-    {
-      path: '/agenda',
-      name: 'agenda',
-      component: Agenda
-    },
-    {
-      path: '/directions',
-      name: 'directions',
-      component: Directions
-    },
-    {
-      path: '/event-summary',
-      name: 'event-summary',
-      component: EventSummary,
-      props: true
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: Login
-    },
-    {
-      path: '/image-upload',
-      alias: '/admin',
-      name: 'imageUpload',
-      component: ImageUpload
-    },
-     {
-         path: '/attendees',
-         name: 'attendees',
-         component: AttendeesChart
-     },
-    {
-      path: '/event-creation',
-      name: 'eventCreation',
-      component: EventCreation
-    },
-    {
-      path: '/talk',
-      name: 'talk',
-      component: Talk,
-        props: (route) => ({
-        talkId: 'test',
-        ...route.params
-        })
-    },
-    {
-      path: '/speakerevaluation',
-      name: 'speakerevaluation',
-      component: SpeakerEvaluation
-    },
-{
-  path: '/transcription',
-    name: 'transcription',
-  component: Transcription
-},
-  ]
+        {
+            path: '/about',
+            name: 'about',
+            // route level code-splitting
+            // this generates a separate chunk (about.[hash].js) for this route
+            // which is lazy-loaded when the route is visited.
+            component: () => import( /* webpackChunkName: "about" */ './views/About.vue')
+        },
+        {
+            path: '/agenda',
+            name: 'agenda',
+            component: Agenda
+        },
+        {
+            path: '/directions',
+            name: 'directions',
+            component: Directions
+        },
+        {
+            path: '/event-summary',
+            name: 'event-summary',
+            component: EventSummary,
+            props: true
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: Login
+        },
+        {
+            path: '/image-upload',
+            name: 'imageUpload',
+            component: ImageUpload
+        },
+        {
+            path: '/attendees',
+            alias: '/prelegent',
+            name: 'attendees',
+            component: AttendeesChart
+        },
+        {
+            path: '/event-creation',
+            alias: '/admin',
+            name: 'eventCreation',
+            component: EventCreation
+        },
+        {
+            path: '/talk',
+            name: 'talk',
+            component: Talk,
+            props: (route) => ({
+                talkId: 'test',
+                ...route.params
+            })
+        },
+        {
+            path: '/speakerevaluation',
+            name: 'speakerevaluation',
+            component: SpeakerEvaluation
+        },
+        {
+            path: '/transcription',
+            alias: '/prelegent',
+            name: 'transcription',
+            component: Transcription
+        },
+        {
+            path: '/lostandfound',
+            name: 'lostandfound',
+            component: LostAndFound
+        }
+    ]
 });

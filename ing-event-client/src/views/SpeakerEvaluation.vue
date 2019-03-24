@@ -3,6 +3,7 @@
         <Loader/>
     </div>
     <div class="home" v-else>
+        <AdminMenubar/>
         <div class="wrapper-normal">
             <div class="admin-img"></div>
             <h1>Panel administratora </h1>
@@ -30,11 +31,13 @@
 
 <script>
     import Loader from "@/components/Loader.vue";
+    import AdminMenubar from "../components/AdminMenubar";
 
     export default {
         name: "speakerevaluation",
         components: {
             Loader,
+            AdminMenubar
         },
         data() {
             return {

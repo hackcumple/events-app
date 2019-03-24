@@ -30,7 +30,7 @@ public class Presentation {
                 .name(this.name)
                 .startHour(this.startHour)
                 .speaker(this.speaker)
-                .tag("FAVORITE")
+                .tag("Proponowana ściezka")
                 .build();
 
     }

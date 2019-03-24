@@ -4,13 +4,13 @@ import FormData from 'form-data'
 const ApiService = {
 
     get(slug = "") {
-        return axios.get(`http://10.100.99.62:8080/api/${slug}`).catch(error => {
+        return axios.get(`http://localhost:8080/api/${slug}`).catch(error => {
             throw new Error(`[RWV] ApiService ${error}`);
         });
     },
 
     post(slug, params) {
-        return axios.post(`http://10.100.99.62:8080/api/${slug}`, params);
+        return axios.post(`http://localhost:8080/api/${slug}`, params);
     },
 
 };

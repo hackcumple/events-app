@@ -9,8 +9,7 @@
       <h1>Co nowego w Javie 12? </h1>
       <div class="lecturer-section">
         <img class="avatar" src="./../assets/avatar.png" alt="Avatar">
-        Zbigniew Stonoga to topowy programista lorem inpsum lorem..,
-        Zbigniew Stonoga to topowy programista lorem inpsum lorem..,
+        Rafał Jankowski <br>Po pierwsze: programista-pasjonat.<br> Człowiek od wszystkiego związanego z programowaniem.
       </div>
       <div class="questions">
         <h2>Zadawaj i podbijaj pytania do prelegenta: </h2>
