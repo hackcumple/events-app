@@ -65,7 +65,7 @@ public class PresentationResource {
     }
 
     @GetMapping(path = "tracks/{eventId}")
-    public ResponseEntity getTracks(@PathVariable("eventId") Long eventId) {
+    public ResponseEntity getTracks(@PathVariable("eventId") Long eventId) throws CloneNotSupportedException {
         return new ResponseEntity<>(presentationService.getTracks(eventId), HttpStatus.OK);
     }
 }
